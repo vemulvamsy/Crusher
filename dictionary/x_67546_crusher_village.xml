@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Village" max_length="40" name="x_67546_crusher_village" type="collection">
+        <element display="true" label="Village name" max_length="200" name="village_name" type="string"/>
+    </element>
+</database>

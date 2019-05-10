@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[function getCustomerData() {
+	//Type appropriate comment here, and begin script below
+	//var respObj = addSelection();
+
+	//function addSelection(){
+	var custSysId = gel('customer_name').value;
+	
+	var ga = new GlideAjax('CrusherUtilAjax');
+	ga.addParam('sysparm_name','getCustomerData');
+	ga.addParam('sysparm_custSysId',custSysId);
+	ga.getXML(getResponseObj);
+
+//var obj={cust_name:'',email_id:'',mobile:'',company:'',address:''};
+}
+function getResponseObj(response){
+	var due_amount =0;
+	var resp = response.responseXML.documentElement.getAttribute("answer");
+	resp = resp.split("<split>");
+	var salesObj = resp[0];
+	var paymentsObj = resp[1];
+	var custDetails = resp[2];
+	var custDetsObj = JSON.parse(custDetails);
+	
+	var respObj = JSON.parse(salesObj);
+	
+	//var custDets = gel("details");
+
+	gel("cust_name").innerHTML = custDetsObj.cust_name;
+	gel("comp").innerHTML = custDetsObj.company;
+	gel("email").innerHTML = custDetsObj.email_id;
+	gel("mob").innerHTML = custDetsObj.mobile;
+	gel("addr").innerHTML = custDetsObj.address;
+	var custTable = gel("customer");
+	custTable.innerHTML = '';
+	var paymentTable = gel("payments");
+	paymentTable.innerHTML = '';
+	var leng = respObj.length;
+
+	var tot_qty = 0;
+	var tot_number_of_trips = 0;
+	var tot_bill_amount = 0;
+	var tot_transport_charge = 0;
+	var tot_total_bill = 0;
+	var tot_batha = 0;
+	for(var i=0; i < leng; i++){
+		var row = custTable.insertRow();
+		var cell0 = row.insertCell();
+		cell0.textContent = respObj[i].item_type;
+		var cell1 = row.insertCell();
+		cell1.textContent = respObj[i].quantity;
+		var cell2 = row.insertCell();
+		cell2.textContent = respObj[i].number_of_trips;
+		var cell3 = row.insertCell();
+		cell3.textContent = respObj[i].bill_amount;
+		var cell4 = row.insertCell();
+		cell4.textContent = respObj[i].transport_charge;
+		var cell5 = row.insertCell();
+		cell5.textContent = respObj[i].batha;
+		var cell6 = row.insertCell();
+		cell6.textContent = respObj[i].total_bill;
+
+
+		tot_qty += parseFloat(respObj[i].quantity);
+		tot_number_of_trips += parseFloat(respObj[i].number_of_trips);
+		tot_bill_amount += parseFloat(respObj[i].bill_amount);
+		tot_transport_charge += parseFloat(respObj[i].transport_charge);
+		tot_batha += parseFloat(respObj[i].batha);
+		tot_total_bill += parseFloat(respObj[i].total_bill);
+	}
+	var row1 = custTable.insertRow();
+	var cell01 = row1.insertCell();
+	cell01.innerHTML = "<h4 ><b>Grand Total</b></h4>";
+	var cell11 = row1.insertCell();
+	cell11.innerHTML = "<h4><b>"+tot_qty+"</b></h4>";
+	var cell21 = row1.insertCell();
+	cell21.innerHTML = "<h4><b>"+tot_number_of_trips+"</b></h4>";
+	var cell31 = row1.insertCell();
+	cell31.innerHTML = "<h4><b>"+tot_bill_amount+"</b></h4>";
+	var cell41 = row1.insertCell();
+	cell41.innerHTML = "<h4><b>"+tot_transport_charge+"</b></h4>";
+	var cell51 = row1.insertCell();
+	cell51.innerHTML = "<h4><b>"+tot_batha+"</b></h4>";
+	var cell61 = row1.insertCell();
+	cell61.innerHTML = "<h4><b>"+tot_total_bill+"</b></h4>";
+	//g_form.setValue('total_sales_amount',tot_total_bill);
+
+	paymentsObj = JSON.parse(paymentsObj);
+	var paymentslen = paymentsObj.length;
+	
+	
+	for(var j=0;j<paymentslen;j++){
+		var rowp = paymentTable.insertRow();
+		if(j == paymentslen-1){ //last row 
+			var celpl0 = rowp.insertCell();
+			celpl0.innerHTML = "<h4><b>"+paymentsObj[j].mode_of_payment+"</b></h4>";
+			var celpl1 = rowp.insertCell();
+			celpl1.innerHTML = "<h4><b>"+paymentsObj[j].amt+"</b></h4>";
+			//g_form.setValue('total_payments',paymentsObj[j].amt);
+			due_amount = parseFloat(tot_total_bill) - parseFloat(paymentsObj[j].amt);
+			//g_form.setValue('due_amount',due_amount.toFixed(2));
+		}else{
+			var celp0 = rowp.insertCell();
+			celp0.textContent = paymentsObj[j].mode_of_payment;
+			var celp1 = rowp.insertCell();
+			celp1.textContent = paymentsObj[j].amt;
+		}
+
+	}
+	var due_amt_html = gel("due_amt");
+	due_amt_html.innerHTML = "Due Amount: "+due_amount.toFixed(2);
+	//g_form.save();
+
+
+	}
+]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_67546_crusher_customer_report.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Arjun Crushers</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4"><h2 class="text-center text-underline"><u>Customer Report</u></h2></div>
+			<div class="col-sm-4"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<form>
+					<div class="form-group row">
+						<label for="customer_name" class="col-sm-3 col-form-label text-right">Enter Customer Name</label>
+						<div class="col-sm-7">
+							<g:ui_reference class="form-control" name="customer_name" id="customer_name" table="x_67546_crusher_customer"  onChange = "getCustomerData()" />
+						</div>
+						<!-- <input type="button" class="btn btn-default" value="Get Details" onclick="/> -->
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h3><u>Customer Details</u></h3>
+				<table class="table" id="details">
+					<tr>
+						<th>Customer Name</th>
+						<td id="cust_name"></td>
+						<th>Company</th>
+						<td id="comp"></td>
+					</tr>
+					
+					<tr>
+						<th>Email ID</th>
+						<td id="email"></td>
+						<th>Mobile Number</th>
+						<td id="mob"></td>
+					</tr>
+					
+					<tr>
+						<th>Address</th>
+						<td id="addr"></td>
+					</tr>
+				</table>
+				<hr />
+				<h3><u>Sales</u></h3>
+				<table class="table" >
+					<thead>
+					<tr class="info">
+						<th scope="col">Item type</th>
+						<th scope="col">Total Quantity</th>
+						<th scope="col">Total no. of trips</th>
+						<th scope="col">Total bill amount</th>
+						<th scope="col">Total transportation charge</th>
+						<th scope="col">Total batha</th>
+						<th scope="col">Total amount</th>
+					</tr>
+					</thead>
+					<tbody id="customer">
+					</tbody>
+
+				</table>
+				<hr />
+				<h3><u>Payments</u></h3>
+				<table class="table" >
+					<thead>
+					<tr class="info">
+						<th scope="col">Mode of payment</th>
+						<th scope="col">Total amount</th>
+					</tr>
+					</thead>
+					<tbody id="payments">
+					</tbody>
+				</table>
+				<hr />
+				<h2 id="due_amt"></h2>
+			</div>
+		</div>
+	</div>
+
+
+</j:jelly>]]></html>
+        <name>customer_report</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-30 07:11:00</sys_created_on>
+        <sys_id>c381e6b04f20bf40a0a27bb28110c7cc</sys_id>
+        <sys_mod_count>40</sys_mod_count>
+        <sys_name>customer_report</sys_name>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sys_ui_page_c381e6b04f20bf40a0a27bb28110c7cc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-04-12 17:32:10</sys_updated_on>
+    </sys_ui_page>
+</record_update>

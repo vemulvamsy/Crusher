@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Sales" max_length="40" name="x_67546_crusher_sales" type="collection">
+        <element default="0" label="Batha" mandatory="true" max_length="20" name="batha" type="decimal"/>
+        <element label="Bill Amount" max_length="20" name="bill_amount" read_only="true" type="decimal"/>
+        <element label="Bill Number" max_length="40" name="bill_number" type="string"/>
+        <element label="Bill Number Counter" max_length="40" name="bill_number_counter" type="integer"/>
+        <element label="Cost per 100 CFT / 1 TON" mandatory="true" max_length="20" name="cost_per_cft_kg" type="decimal"/>
+        <element label="Customer name" mandatory="true" max_length="32" name="customer_name" reference="x_67546_crusher_customer" type="reference"/>
+        <element label="Date" mandatory="true" max_length="40" name="date" type="glide_date"/>
+        <element label="Introducer" max_length="32" name="introducer" reference="x_67546_crusher_introducer" type="reference"/>
+        <element label="Item type" mandatory="true" max_length="40" name="item_type" reference="x_67546_crusher_item_types" type="reference"/>
+        <element label="Location" max_length="500" name="location" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Number of trips" mandatory="true" max_length="40" name="number_of_trips" type="integer"/>
+        <element label="Other customer name" max_length="100" name="other_customer_name" type="string"/>
+        <element choice="3" default="cft" label="Qty Type" mandatory="true" max_length="40" name="qty_type" type="choice">
+            <choice>
+                <element label="CFT" sequence="0" value="cft"/>
+                <element label="TON" sequence="1" value="kg"/>
+            </choice>
+        </element>
+        <element label="Quantity" mandatory="true" max_length="20" name="quantity" type="integer"/>
+        <element label="Total bill" max_length="20" name="total_bill" read_only="true" type="decimal"/>
+        <element label="Transportation by" mandatory="true" max_length="40" name="transportation_by" reference="x_67546_crusher_transport_provider" type="reference"/>
+        <element label="Transport charge" mandatory="true" max_length="20" name="transport_charge" type="decimal"/>
+        <element label="Vehicle number" mandatory="true" max_length="40" name="vehicle_number" type="string"/>
+        <element label="Location" mandatory="true" max_length="32" name="village" reference="x_67546_crusher_village" type="reference"/>
+        <index name="index">
+            <element name="introducer"/>
+        </index>
+        <index name="index2">
+            <element name="customer_name"/>
+        </index>
+        <index name="index3">
+            <element name="village"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Transport provider" max_length="40" name="x_67546_crusher_transport_provider" type="collection">
+        <element display="true" label="Name" max_length="200" name="name" type="string"/>
+    </element>
+</database>

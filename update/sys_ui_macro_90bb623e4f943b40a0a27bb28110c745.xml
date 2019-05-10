@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_macro">
+    <sys_ui_macro action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category>general</category>
+        <description/>
+        <media_type/>
+        <name>crusher_test</name>
+        <scoped_name>x_67546_crusher_crusher_test</scoped_name>
+        <sys_class_name>sys_ui_macro</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-24 02:37:07</sys_created_on>
+        <sys_id>90bb623e4f943b40a0a27bb28110c745</sys_id>
+        <sys_mod_count>46</sys_mod_count>
+        <sys_name>crusher_test</sys_name>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sys_ui_macro_90bb623e4f943b40a0a27bb28110c745</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-04-12 17:25:37</sys_updated_on>
+        <xml><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<h3><u>Sales</u></h3>
+	<table class="table" id="customer">
+		<tr>
+			<th scope="col">Item type</th>
+			<th scope="col">Total Quantity</th>
+			<th scope="col">Total no. of trips</th>
+			<th scope="col">Total bill amount</th>
+			<th scope="col">Total transportation charge</th>
+			<th scope="col">Total Batha</th>
+			<th scope="col">Total amount</th>
+		</tr>
+
+
+	</table>
+	<hr />
+	<h3><u>Payments</u></h3>
+	<table class="table" id="payments">
+		<tr>
+			<th scope="col">Mode of payment</th>
+			<th scope="col">Total amount</th>
+		</tr>
+
+	</table>
+	<hr />
+	<h2 id="due_amt"></h2>
+	<script>
+
+		function getHTMLTable(){
+		return document.getElementById("customer");
+		}
+		function getPaymentsHTMLTable(){
+		return document.getElementById("payments"); 
+		}
+		function getDueamtHTMLTable(){
+		return document.getElementById("due_amt"); 
+		}
+
+g_form.save();
+	</script>
+</j:jelly>
+
+]]></xml>
+    </sys_ui_macro>
+</record_update>

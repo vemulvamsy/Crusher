@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="qty_type" table="x_67546_crusher_sales" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>qty_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>CFT</label>
+            <language>en</language>
+            <name>x_67546_crusher_sales</name>
+            <sequence>0</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-03-23 15:47:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>142750f24f103b40a0a27bb28110c795</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-03-23 15:47:21</sys_updated_on>
+            <value>cft</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>qty_type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>TON</label>
+            <language>en</language>
+            <name>x_67546_crusher_sales</name>
+            <sequence>1</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-03-23 15:47:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>542750f24f103b40a0a27bb28110c796</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-04-01 14:06:20</sys_updated_on>
+            <value>kg</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>qty_type</element>
+            <name>x_67546_crusher_sales</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-03-23 15:47:21</sys_created_on>
+            <sys_id>102750f24f103b40a0a27bb28110c796</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>qty_type</sys_name>
+            <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+            <sys_update_name>sys_choice_x_67546_crusher_sales_qty_type</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-03-23 15:47:21</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

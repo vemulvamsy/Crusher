@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <id>ac_index</id>
+        <internal>false</internal>
+        <public>true</public>
+        <roles/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-31 14:01:33</sys_created_on>
+        <sys_id>737b899d4fa0ff40a0a27bb28110c78c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ac_index</sys_name>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sp_page_737b899d4fa0ff40a0a27bb28110c78c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-31 14:01:33</sys_updated_on>
+        <title>arjun crushers index</title>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=737b899d4fa0ff40a0a27bb28110c78c"/>
+</record_update>

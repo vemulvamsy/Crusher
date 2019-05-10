@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>company</field>
+        <global>true</global>
+        <messages/>
+        <name>update UI macro</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+	//Type appropriate comment here, and begin script below
+	//var respObj = addSelection();
+
+	//function addSelection(){
+	var custSysId = g_form.getUniqueValue();
+	
+	var ga = new GlideAjax('CrusherUtilAjax');
+	ga.addParam('sysparm_name','getCustomerData');
+	ga.addParam('sysparm_custSysId',custSysId);
+	ga.getXML(getResponseObj);
+
+
+}
+function getResponseObj(response){
+	var due_amount =0;
+	var resp = response.responseXML.documentElement.getAttribute("answer");
+	resp = resp.split("<split>");
+	var salesObj = resp[0];
+	var paymentsObj = resp[1];
+	var respObj = JSON.parse(salesObj);
+
+	var custTable = getHTMLTable();//document.getElementById("customer");
+	//var custTable = gel("customer");
+	var leng = respObj.length;
+
+	var tot_qty = 0;
+	var tot_number_of_trips = 0;
+	var tot_bill_amount = 0;
+	var tot_transport_charge = 0;
+	var tot_batha = 0;
+	var tot_total_bill = 0;
+	for(var i=0; i < leng; i++){
+		var row = custTable.insertRow();
+		var cell0 = row.insertCell();
+		cell0.textContent = respObj[i].item_type;
+		var cell1 = row.insertCell();
+		cell1.textContent = respObj[i].quantity;
+		var cell2 = row.insertCell();
+		cell2.textContent = respObj[i].number_of_trips;
+		var cell3 = row.insertCell();
+		cell3.textContent = respObj[i].bill_amount;
+		var cell4 = row.insertCell();
+		cell4.textContent = respObj[i].transport_charge;
+		var cell5 = row.insertCell();
+		cell5.textContent = respObj[i].batha;
+		var cell6 = row.insertCell();
+		cell6.textContent = respObj[i].total_bill;
+
+
+		tot_qty += parseFloat(respObj[i].quantity);
+		tot_number_of_trips += parseFloat(respObj[i].number_of_trips);
+		tot_bill_amount += parseFloat(respObj[i].bill_amount);
+		tot_transport_charge += parseFloat(respObj[i].transport_charge);
+		tot_batha += parseFloat(respObj[i].batha);
+		tot_total_bill += parseFloat(respObj[i].total_bill);
+	}
+	var row1 = custTable.insertRow();
+	var cell01 = row1.insertCell();
+	cell01.innerHTML = "<h4 ><b>Grand Total</b></h4>";
+	var cell11 = row1.insertCell();
+	cell11.innerHTML = "<h4><b>"+tot_qty+"</b></h4>";
+	var cell21 = row1.insertCell();
+	cell21.innerHTML = "<h4><b>"+tot_number_of_trips+"</b></h4>";
+	var cell31 = row1.insertCell();
+	cell31.innerHTML = "<h4><b>"+tot_bill_amount+"</b></h4>";
+	var cell41 = row1.insertCell();
+	cell41.innerHTML = "<h4><b>"+tot_transport_charge+"</b></h4>";
+	var cell51 = row1.insertCell();
+	cell51.innerHTML = "<h4><b>"+tot_batha+"</b></h4>";
+	var cell61 = row1.insertCell();
+	cell61.innerHTML = "<h4><b>"+tot_total_bill+"</b></h4>";
+	g_form.setValue('total_sales_amount',tot_total_bill);
+
+	paymentsObj = JSON.parse(paymentsObj);
+	var paymentslen = paymentsObj.length;
+	var paymentTable = getPaymentsHTMLTable();//document.getElementById("customer");
+	for(var j=0;j<paymentslen;j++){
+		var rowp = paymentTable.insertRow();
+		if(j == paymentslen-1){ //last row 
+			var celpl0 = rowp.insertCell();
+			celpl0.innerHTML = "<h4><b>"+paymentsObj[j].mode_of_payment+"</b></h4>";
+			var celpl1 = rowp.insertCell();
+			celpl1.innerHTML = "<h4><b>"+paymentsObj[j].amt+"</b></h4>";
+			g_form.setValue('total_payments',paymentsObj[j].amt);
+			due_amount = parseFloat(tot_total_bill) - parseFloat(paymentsObj[j].amt);
+			g_form.setValue('due_amount',due_amount.toFixed(2));
+		}else{
+			var celp0 = rowp.insertCell();
+			celp0.textContent = paymentsObj[j].mode_of_payment;
+			var celp1 = rowp.insertCell();
+			celp1.textContent = paymentsObj[j].amt;
+		}
+
+	}
+	var due_amt_html = getDueamtHTMLTable();
+	due_amt_html.innerHTML = "Due Amount: "+due_amount;
+	//g_form.save();
+
+
+	}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-24 04:49:58</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>12f94b724f183b40a0a27bb28110c7f4</sys_id>
+        <sys_mod_count>32</sys_mod_count>
+        <sys_name>update UI macro</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sys_script_client_12f94b724f183b40a0a27bb28110c7f4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-04-12 17:28:28</sys_updated_on>
+        <table>x_67546_crusher_customer</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

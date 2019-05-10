@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_67546_crusher.CrusherUtilAjax</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>CrusherUtilAjax</name>
+        <script><![CDATA[var CrusherUtilAjax = Class.create();
+CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+	getCustomerData : function(){
+		var custSysId = this.getParameter('sysparm_custSysId');
+		gs.info("vamshi: "+custSysId);
+		var item_types = this.getAvailableSalesTypeforCustomer(custSysId);
+		gs.info("vamshi item_types: "+item_types.join(','));
+		var custSales = this.getSalesByType(custSysId,item_types);
+		gs.info("vamshi cust sales: "+JSON.stringify(custSales));
+		var payments = this.getPaymentsofCustomer(custSysId);
+		
+		var custDets = this.getCustomerDetails(custSysId);
+		
+		return JSON.stringify(custSales)+"<split>"+JSON.stringify(payments)+"<split>"+JSON.stringify(custDets);
+	},
+	getCustomerDetails : function(custSysId){
+		var obj={cust_name:'',email_id:'',mobile:'',company:'',address:''};
+		var grc = new GlideRecord('x_67546_crusher_customer');
+		if(grc.get(custSysId)){
+			
+			obj.cust_name = grc.name+'';
+			obj.email_id = grc.email_id+'';
+			obj.mobile = grc.mobile_number+'';
+			obj.company = grc.company.company_name+'';
+			obj.address = grc.company.address+'';
+		}
+		return obj;
+	},
+	getAvailableSalesTypeforCustomer : function(custSysId){
+		gs.info("vamshi getAvailableSalesTypeforCustomer: "+custSysId);
+		var types = [];
+		var grs = new GlideRecord('x_67546_crusher_sales');
+		grs.addQuery('customer_name',custSysId);
+		grs.orderBy('item_type');
+		grs.query();
+		while(grs.next()){
+			types.push(grs.item_type+'');
+		}
+		gs.info("vamshi getAvailableSalesTypeforCustomer: "+types.join(','));
+		var arrayUtil = new global.ArrayUtil();
+		return arrayUtil.unique(types);
+	},
+	getSalesByType : function(custSysId,item_types){
+		var fields = ['quantity','number_of_trips','bill_amount','transport_charge','batha','total_bill'];
+		gs.info("vamshi getSalesByType: "+custSysId+"::"+item_types);
+		var result = [];
+		for(var i=0; i<item_types.length; i++){
+			var obj = {};
+			obj.item_type = this.getItemTypeName(item_types[i]);
+			for(var j=0;j<fields.length;j++){
+				obj[fields[j]] = this.getAggregateofGivenFromSales(item_types[i],custSysId,fields[j]);
+				gs.info("vamshi obj[fields[j]]: "+obj[fields[j]]);
+			}
+			result.push(obj);
+		}
+		gs.info("vamshi result: "+JSON.stringify(result));
+		return result;
+	},
+	getItemTypeName : function(item_type_sys_id){
+		var gri = new GlideRecord('x_67546_crusher_item_types');
+		if(gri.get(item_type_sys_id)){
+			return gri.name+'';
+		}
+		return '';
+	},
+	getAggregateofGivenFromSales : function(item_type,custSysId,field){
+		var tot = 0;
+		gs.info("vamshi getAggregateofGivenFromSales: "+item_type+"::"+custSysId+"::"+field);
+		var gra = new GlideAggregate('x_67546_crusher_sales');
+		gra.addQuery('item_type',item_type);
+		gra.addQuery('customer_name',custSysId);
+		gra.groupBy('item_type');
+		gra.addAggregate('SUM',field);
+		gra.query();
+		while(gra.next()){
+			tot = gra.getAggregate('SUM',field); 
+		}
+		gs.info("vamshi tot: "+tot);
+		return tot;
+
+	},
+	getPaymentsofCustomer : function(custSysId){
+		var res = [];
+		var total = 0;
+		var grp = new GlideAggregate('x_67546_crusher_customer_payments');
+		grp.addQuery('customer',custSysId);
+		grp.addAggregate('SUM','amount');
+		grp.groupBy('mode_of_payment');
+		grp.query();
+		while(grp.next()){
+			var obj = {};
+			obj.mode_of_payment = grp.mode_of_payment+'';
+			obj.amt = grp.getAggregate('SUM','amount');
+			total += parseFloat(grp.getAggregate('SUM','amount'));
+			res.push(obj);
+		}
+		res.push({'mode_of_payment':'Total amount','amt':total});
+		
+		return res;
+	},
+
+	type: 'CrusherUtilAjax'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-24 05:58:51</sys_created_on>
+        <sys_id>c7f9df3e4f183b40a0a27bb28110c7c8</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>CrusherUtilAjax</sys_name>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sys_script_include_c7f9df3e4f183b40a0a27bb28110c7c8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-04-12 17:32:15</sys_updated_on>
+    </sys_script_include>
+</record_update>
