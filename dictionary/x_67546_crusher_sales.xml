@@ -20,7 +20,7 @@
                 <element label="TON" sequence="1" value="kg"/>
             </choice>
         </element>
-        <element label="Quantity" mandatory="true" max_length="20" name="quantity" type="integer"/>
+        <element label="Quantity" mandatory="true" max_length="50" name="quantity" type="decimal"/>
         <element label="Total bill" max_length="20" name="total_bill" read_only="true" type="decimal"/>
         <element label="Transportation by" mandatory="true" max_length="40" name="transportation_by" reference="x_67546_crusher_transport_provider" type="reference"/>
         <element label="Transport charge" mandatory="true" max_length="20" name="transport_charge" type="decimal"/>
