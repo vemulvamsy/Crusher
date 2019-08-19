@@ -12,16 +12,21 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
 	getCustomerData : function(){
 		var custSysId = this.getParameter('sysparm_custSysId');
-		gs.info("vamshi: "+custSysId);
-		var item_types = this.getAvailableSalesTypeforCustomer(custSysId);
+		var from_date = this.getParameter('sysparm_from_date');
+		var to_date = this.getParameter('sysparm_to_date');
+		gs.info("vamshi: "+custSysId); //dateBETWEENjavascript:gs.dateGenerate('2019-06-01','start')@javascript:gs.dateGenerate('2019-06-23','end')
+		var item_types = this.getAvailableSalesTypeforCustomer(custSysId,from_date,to_date);
 		gs.info("vamshi item_types: "+item_types.join(','));
-		var custSales = this.getSalesByType(custSysId,item_types);
+		var custSales = this.getSalesByType(custSysId,item_types,from_date,to_date);
 		gs.info("vamshi cust sales: "+JSON.stringify(custSales));
-		var payments = this.getPaymentsofCustomer(custSysId);
-		
+		var payments = this.getPaymentsofCustomer(custSysId,from_date,to_date);
 		var custDets = this.getCustomerDetails(custSysId);
+		var salesDets = this.getSales(custSysId,from_date,to_date);
+		var paymentsDets = this.getPayments(custSysId,from_date,to_date);
 		
-		return JSON.stringify(custSales)+"<split>"+JSON.stringify(payments)+"<split>"+JSON.stringify(custDets);
+		return JSON.stringify(custSales)+"<split>"+JSON.stringify(payments)+"<split>"+JSON.stringify(custDets)+"<split>"+JSON.stringify(salesDets)+"<split>"+JSON.stringify(paymentsDets);
+		
+		//return JSON.stringify(custSales)+"<split>"+JSON.stringify(payments)+"<split>"+JSON.stringify(custDets);
 	},
 	getCustomerDetails : function(custSysId){
 		var obj={cust_name:'',email_id:'',mobile:'',company:'',address:''};
@@ -36,11 +41,13 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		}
 		return obj;
 	},
-	getAvailableSalesTypeforCustomer : function(custSysId){
+	getAvailableSalesTypeforCustomer : function(custSysId,from_date,to_date){
 		gs.info("vamshi getAvailableSalesTypeforCustomer: "+custSysId);
 		var types = [];
 		var grs = new GlideRecord('x_67546_crusher_sales');
 		grs.addQuery('customer_name',custSysId);
+		if(from_date!='' && to_date!='')
+			grs.addEncodedQuery("dateBETWEENjavascript:gs.dateGenerate('"+from_date+"','start')@javascript:gs.dateGenerate('"+to_date+"','end')");
 		grs.orderBy('item_type');
 		grs.query();
 		while(grs.next()){
@@ -50,7 +57,7 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		var arrayUtil = new global.ArrayUtil();
 		return arrayUtil.unique(types);
 	},
-	getSalesByType : function(custSysId,item_types){
+	getSalesByType : function(custSysId,item_types,from_date,to_date){
 		var fields = ['quantity','number_of_trips','bill_amount','transport_charge','batha','total_bill'];
 		gs.info("vamshi getSalesByType: "+custSysId+"::"+item_types);
 		var result = [];
@@ -58,7 +65,7 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 			var obj = {};
 			obj.item_type = this.getItemTypeName(item_types[i]);
 			for(var j=0;j<fields.length;j++){
-				obj[fields[j]] = this.getAggregateofGivenFromSales(item_types[i],custSysId,fields[j]);
+				obj[fields[j]] = this.getAggregateofGivenFromSales(item_types[i],custSysId,fields[j],from_date,to_date);
 				gs.info("vamshi obj[fields[j]]: "+obj[fields[j]]);
 			}
 			result.push(obj);
@@ -73,12 +80,14 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		}
 		return '';
 	},
-	getAggregateofGivenFromSales : function(item_type,custSysId,field){
+	getAggregateofGivenFromSales : function(item_type,custSysId,field,from_date,to_date){
 		var tot = 0;
 		gs.info("vamshi getAggregateofGivenFromSales: "+item_type+"::"+custSysId+"::"+field);
 		var gra = new GlideAggregate('x_67546_crusher_sales');
 		gra.addQuery('item_type',item_type);
 		gra.addQuery('customer_name',custSysId);
+		if(from_date!='' && to_date!='')
+			gra.addEncodedQuery("dateBETWEENjavascript:gs.dateGenerate('"+from_date+"','start')@javascript:gs.dateGenerate('"+to_date+"','end')");
 		gra.groupBy('item_type');
 		gra.addAggregate('SUM',field);
 		gra.query();
@@ -89,11 +98,13 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		return tot;
 
 	},
-	getPaymentsofCustomer : function(custSysId){
+	getPaymentsofCustomer : function(custSysId,from_date,to_date){
 		var res = [];
 		var total = 0;
 		var grp = new GlideAggregate('x_67546_crusher_customer_payments');
 		grp.addQuery('customer',custSysId);
+		if(from_date!='' && to_date!='')
+			grp.addEncodedQuery("dateBETWEENjavascript:gs.dateGenerate('"+from_date+"','start')@javascript:gs.dateGenerate('"+to_date+"','end')");
 		grp.addAggregate('SUM','amount');
 		grp.groupBy('mode_of_payment');
 		grp.query();
@@ -108,6 +119,57 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		
 		return res;
 	},
+	
+	getSales : function(custSysId,from_date,to_date){
+		gs.info("vamshi crusher inside getSales");
+		var sales = [];
+		var grs = new GlideRecord('x_67546_crusher_sales');
+		grs.addQuery('customer_name',custSysId);
+		if(from_date!='' && to_date!='')
+			grs.addEncodedQuery("dateBETWEENjavascript:gs.dateGenerate('"+from_date+"','start')@javascript:gs.dateGenerate('"+to_date+"','end')");
+		grs.orderByDesc('date');
+		grs.query();
+		while(grs.next()){
+			var obj = {};
+			obj.biil_number = grs.bill_number+'';
+			obj.date = grs.date+'';
+			obj.vehicle_number = grs.vehicle_number+'';
+			obj.transportation_by = grs.transportation_by.name+'';
+			obj.location = grs.location+'';
+			obj.item_type = grs.item_type.name+'';
+			obj.quantity = grs.quantity+'';
+			obj.quantity_type = grs.qty_type+'';
+			obj.no_of_trips = grs.number_of_trips+'';
+			obj.cost_per_cft_kg = grs.cost_per_cft_kg+'';
+			obj.bill_amt = grs.bill_amount+'';
+			obj.transportation_charge = grs.transport_charge+'';
+			obj.batha = grs.batha+'';
+			obj.total_bill = grs.total_bill+'';
+			sales.push(obj);
+		}
+		//gs.info("vamshi crusher inside getSales sales: "+JSON.stringify(sales));
+		return sales;
+	},
+	getPayments : function(custSysId,from_date,to_date){
+		gs.info("vamshi crusher inside getPayments");
+		var payments = [];
+		var grp = new GlideRecord('x_67546_crusher_customer_payments');
+		grp.addQuery('customer',custSysId);
+		if(from_date!='' && to_date!='')
+			grp.addEncodedQuery("dateBETWEENjavascript:gs.dateGenerate('"+from_date+"','start')@javascript:gs.dateGenerate('"+to_date+"','end')");
+		grp.orderByDesc('date');
+		grp.query();
+		while(grp.next()){
+			var obj = {};
+			obj.number = grp.number+'';
+			obj.date = grp.date+'';
+			obj.mode_of_payment = grp.mode_of_payment+'';
+			obj.amount = grp.amount+'';
+			payments.push(obj);
+		}
+		//gs.info("vamshi crusher inside getSales payments: "+JSON.stringify(payments));
+		return payments;
+	},
 
 	type: 'CrusherUtilAjax'
 });]]></script>
@@ -115,13 +177,13 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-03-24 05:58:51</sys_created_on>
         <sys_id>c7f9df3e4f183b40a0a27bb28110c7c8</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>CrusherUtilAjax</sys_name>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sys_script_include_c7f9df3e4f183b40a0a27bb28110c7c8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-04-12 17:32:15</sys_updated_on>
+        <sys_updated_on>2019-06-24 17:20:56</sys_updated_on>
     </sys_script_include>
 </record_update>

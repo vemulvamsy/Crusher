@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>expenditure_type</field>
+        <global>true</global>
+        <messages/>
+        <name>disp or hide other type field</name>
+        <order>100</order>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   
+	if(g_form.getValue('expenditure_type') == '9387ce144f5a3780a0a27bb28110c72b'){ //other
+		g_form.setDisplay('other_type',true);
+		g_form.setMandatory('other_type',true);
+	}else{
+		g_form.setMandatory('other_type',false);
+		g_form.setDisplay('other_type',false);
+	}
+   //Type appropriate comment here, and begin script below
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-06-23 15:43:04</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>60c782544f5a3780a0a27bb28110c7d6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>disp or hide other type field</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sys_script_client_60c782544f5a3780a0a27bb28110c7d6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-06-23 15:46:52</sys_updated_on>
+        <table>x_67546_crusher_expenditure</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

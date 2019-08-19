@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_67546_crusher_employees" version="2" view="sys_ref_list">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>name</element>
+            <list_id display_value="x_67546_crusher_employees" element="NULL" name="x_67546_crusher_employees" parent="NULL" relationship="NULL" sys_domain="global" view="90ad3151c501030033995e88a53e1b65">412dcdf04f52b780a0a27bb28110c7ba</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>saritha.rao</sys_created_by>
+            <sys_created_on>2019-06-25 00:41:03</sys_created_on>
+            <sys_id>c52dcdf04f52b780a0a27bb28110c7ba</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>saritha.rao</sys_updated_by>
+            <sys_updated_on>2019-06-25 00:41:03</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_67546_crusher_employees</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>saritha.rao</sys_created_by>
+            <sys_created_on>2019-06-25 00:41:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>412dcdf04f52b780a0a27bb28110c7ba</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_67546_crusher_employees</sys_name>
+            <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+            <sys_update_name>sys_ui_list_x_67546_crusher_employees_sys_ref_list</sys_update_name>
+            <sys_updated_by>saritha.rao</sys_updated_by>
+            <sys_updated_on>2019-06-25 00:41:03</sys_updated_on>
+            <sys_user/>
+            <view display_value="Reference List" name="sys_ref_list">90ad3151c501030033995e88a53e1b65</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

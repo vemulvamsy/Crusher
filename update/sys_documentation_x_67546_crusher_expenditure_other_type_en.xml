@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="other_type" label="Other type" language="en" table="x_67546_crusher_expenditure">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>other_type</element>
+            <help/>
+            <hint/>
+            <label>Other type</label>
+            <language>en</language>
+            <name>x_67546_crusher_expenditure</name>
+            <plural>Other types</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-06-23 15:39:57</sys_created_on>
+            <sys_id>c5b742544f5a3780a0a27bb28110c7a2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Other type</sys_name>
+            <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+            <sys_update_name>sys_documentation_x_67546_crusher_expenditure_other_type_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-06-23 15:39:57</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

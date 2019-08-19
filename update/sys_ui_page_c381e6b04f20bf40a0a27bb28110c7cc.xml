@@ -2,31 +2,58 @@
 <record_update table="sys_ui_page">
     <sys_ui_page action="INSERT_OR_UPDATE">
         <category>general</category>
-        <client_script><![CDATA[function getCustomerData() {
+        <client_script><![CDATA[showDatePicker();
+function showDatePicker(){
+	var cbox = gel("need_date_range").checked;
+	var dpick = gel("date_pick");
+	if (cbox) {
+		dpick.style.display = "block";
+	} else {
+		dpick.style.display = "none";
+	}
+}
+function getCustomerData() {
 	//Type appropriate comment here, and begin script below
 	//var respObj = addSelection();
 
 	//function addSelection(){
 	var custSysId = gel('customer_name').value;
-	
+	var cbox = gel("need_date_range").checked;
+	var from_date = '';
+	var to_date = '';
+	if(cbox){
+		var fd = gel("from_date").value.split(" ")[0].split('-');
+		var td = gel("to_date").value.split(" ")[0].split('-');
+		//'06-01-2019';
+		from_date = fd[2]+"-"+fd[0]+"-"+fd[1];
+		to_date = td[2]+"-"+td[0]+"-"+td[1];
+		
+// 		alert(from_date);
+// 		alert(to_date);
+	}
 	var ga = new GlideAjax('CrusherUtilAjax');
 	ga.addParam('sysparm_name','getCustomerData');
 	ga.addParam('sysparm_custSysId',custSysId);
+	ga.addParam('sysparm_from_date',from_date);
+	ga.addParam('sysparm_to_date',to_date);
 	ga.getXML(getResponseObj);
 
-//var obj={cust_name:'',email_id:'',mobile:'',company:'',address:''};
+	//var obj={cust_name:'',email_id:'',mobile:'',company:'',address:''};
 }
 function getResponseObj(response){
 	var due_amount =0;
 	var resp = response.responseXML.documentElement.getAttribute("answer");
+	console.log(resp);
 	resp = resp.split("<split>");
 	var salesObj = resp[0];
 	var paymentsObj = resp[1];
 	var custDetails = resp[2];
+	var salesDetails = resp[3];
+	var paymentsDetails = resp[4];
 	var custDetsObj = JSON.parse(custDetails);
-	
+
 	var respObj = JSON.parse(salesObj);
-	
+
 	//var custDets = gel("details");
 
 	gel("cust_name").innerHTML = custDetsObj.cust_name;
@@ -38,6 +65,10 @@ function getResponseObj(response){
 	custTable.innerHTML = '';
 	var paymentTable = gel("payments");
 	paymentTable.innerHTML = '';
+	var salesDetsTable = gel("sales_details");
+	salesDetsTable.innerHTML = '';
+	var paymentDetsTable = gel("payments_details");
+	paymentDetsTable.innerHTML = '';
 	var leng = respObj.length;
 
 	var tot_qty = 0;
@@ -90,8 +121,8 @@ function getResponseObj(response){
 
 	paymentsObj = JSON.parse(paymentsObj);
 	var paymentslen = paymentsObj.length;
-	
-	
+
+
 	for(var j=0;j<paymentslen;j++){
 		var rowp = paymentTable.insertRow();
 		if(j == paymentslen-1){ //last row 
@@ -114,14 +145,74 @@ function getResponseObj(response){
 	due_amt_html.innerHTML = "Due Amount: "+due_amount.toFixed(2);
 	//g_form.save();
 
+	var salesDetsObj = JSON.parse(salesDetails);
+	var salesDetsObjLen = salesDetsObj.length;
+	for(var s=0;s<salesDetsObjLen;s++){
+		var rows = salesDetsTable.insertRow();
+		var cels0 = rows.insertCell();
+		cels0.innerHTML = salesDetsObj[s].biil_number;
+		var cels1 = rows.insertCell();
+		cels1.innerHTML = salesDetsObj[s].date;
+		var cels2 = rows.insertCell();
+		cels2.innerHTML = salesDetsObj[s].vehicle_number;
+		var cels3 = rows.insertCell();
+		cels3.innerHTML = salesDetsObj[s].transportation_by;
+		var cels4 = rows.insertCell();
+		cels4.innerHTML = salesDetsObj[s].location;
+		var cels5 = rows.insertCell();
+		cels5.innerHTML = salesDetsObj[s].item_type;
+		var cels6 = rows.insertCell();
+		cels6.innerHTML = salesDetsObj[s].quantity;
+		var cels7 = rows.insertCell();
+		cels7.innerHTML = salesDetsObj[s].quantity_type;
+		var cels8 = rows.insertCell();
+		cels8.innerHTML = salesDetsObj[s].no_of_trips;
+		var cels9 = rows.insertCell();
+		cels9.innerHTML = salesDetsObj[s].cost_per_cft_kg;
+		var cels10 = rows.insertCell();
+		cels10.innerHTML = salesDetsObj[s].bill_amt;
+		var cels11 = rows.insertCell();
+		cels11.innerHTML = salesDetsObj[s].transportation_charge;
+		var cels12 = rows.insertCell();
+		cels12.innerHTML = salesDetsObj[s].batha;
+		var cels13 = rows.insertCell();
+		cels13.innerHTML = salesDetsObj[s].total_bill;
+
 
 	}
+
+	var paymentsDetsObj = JSON.parse(paymentsDetails);
+	var paymentsDetslen = paymentsDetsObj.length;
+
+
+	for(var j=0;j<paymentsDetslen;j++){
+		var rowp = paymentDetsTable.insertRow();
+
+		var celpl0 = rowp.insertCell();
+		celpl0.innerHTML = paymentsDetsObj[j].number;
+		var celpl1 = rowp.insertCell();
+		celpl1.innerHTML = paymentsDetsObj[j].date;
+		var celpl2 = rowp.insertCell();
+		celpl2.innerHTML = paymentsDetsObj[j].mode_of_payment;
+		var celpl3 = rowp.insertCell();
+		celpl3.innerHTML = paymentsDetsObj[j].amount;
+
+	}
+}
 ]]></client_script>
         <description/>
         <direct>false</direct>
         <endpoint>x_67546_crusher_customer_report.do</endpoint>
         <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<style> 
+		
+		@media print { 
+			.noprint { 
+				display: none; 
+			} 
+		} 
+	</style> 
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -139,14 +230,33 @@ function getResponseObj(response){
 		</div>
 		<div class="row">
 			<div class="col-sm-2"></div>
-			<div class="col-sm-8">
+			<div class="col-sm-8 noprint">
 				<form>
 					<div class="form-group row">
 						<label for="customer_name" class="col-sm-3 col-form-label text-right">Enter Customer Name</label>
 						<div class="col-sm-7">
-							<g:ui_reference class="form-control" name="customer_name" id="customer_name" table="x_67546_crusher_customer"  onChange = "getCustomerData()" />
+							<g:ui_reference class="form-control" name="customer_name" id="customer_name" table="x_67546_crusher_customer"   />
 						</div>
+
 						<!-- <input type="button" class="btn btn-default" value="Get Details" onclick="/> -->
+					</div>
+					<div class="form-group row">
+						<label for="customer_name" class="col-sm-3 col-form-label text-right">Need date range</label>
+						<div class="col-sm-7">
+							<input type="checkbox" id="need_date_range" onchange="showDatePicker()" /> 
+						</div>
+					</div>
+					<div class="form-group row" id="date_pick">
+						<label for="customer_name" class="col-sm-3 col-form-label text-right">Select Date Range</label>
+						<div class="col-sm-7">
+							from : <g:ui_date_time class="date-picker form-control" name="from_date" table='x_67546_crusher_customer' field='date' id="from_date"/>  to : <g:ui_date_time class="date-picker form-control" name="to_date" table='x_67546_crusher_customer' field='date' id="to_date" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-12"><center>
+							<input type="button" class="btn btn-default" value="Get Details"  onclick="getCustomerData()"/></center>
+						</div>
+
 					</div>
 				</form>
 			</div>
@@ -162,14 +272,14 @@ function getResponseObj(response){
 						<th>Company</th>
 						<td id="comp"></td>
 					</tr>
-					
+
 					<tr>
 						<th>Email ID</th>
 						<td id="email"></td>
 						<th>Mobile Number</th>
 						<td id="mob"></td>
 					</tr>
-					
+
 					<tr>
 						<th>Address</th>
 						<td id="addr"></td>
@@ -179,15 +289,15 @@ function getResponseObj(response){
 				<h3><u>Sales</u></h3>
 				<table class="table" >
 					<thead>
-					<tr class="info">
-						<th scope="col">Item type</th>
-						<th scope="col">Total Quantity</th>
-						<th scope="col">Total no. of trips</th>
-						<th scope="col">Total bill amount</th>
-						<th scope="col">Total transportation charge</th>
-						<th scope="col">Total batha</th>
-						<th scope="col">Total amount</th>
-					</tr>
+						<tr class="info">
+							<th scope="col">Item type</th>
+							<th scope="col">Total Quantity</th>
+							<th scope="col">Total no. of trips</th>
+							<th scope="col">Total bill amount</th>
+							<th scope="col">Total transportation charge</th>
+							<th scope="col">Total batha</th>
+							<th scope="col">Total amount</th>
+						</tr>
 					</thead>
 					<tbody id="customer">
 					</tbody>
@@ -197,16 +307,54 @@ function getResponseObj(response){
 				<h3><u>Payments</u></h3>
 				<table class="table" >
 					<thead>
-					<tr class="info">
-						<th scope="col">Mode of payment</th>
-						<th scope="col">Total amount</th>
-					</tr>
+						<tr class="info">
+							<th scope="col">Mode of payment</th>
+							<th scope="col">Total amount</th>
+						</tr>
 					</thead>
 					<tbody id="payments">
 					</tbody>
 				</table>
 				<hr />
 				<h2 id="due_amt"></h2>
+				<hr />
+				<h3><u>Sale Details</u></h3>
+				<table class="table" >
+					<thead>
+						<tr class="info">
+							<th scope="col">Bill Number</th>
+							<th scope="col">Date</th>
+							<th scope="col">Vehicle Number</th>
+							<th scope="col">Transportation by</th>
+							<th scope="col">Location</th>
+							<th scope="col">Item type</th>
+							<th scope="col">Quantity</th>
+							<th scope="col">Quantity type</th>
+							<th scope="col">No. of trips</th>
+							<th scope="col">Cost per 100 CFT / 1 TON</th>
+							<th scope="col">Bill Amount</th>
+							<th scope="col">Transportation charge</th>
+							<th scope="col">Batha</th>
+							<th scope="col">Total Bill</th>
+						</tr>
+					</thead>
+					<tbody id="sales_details">
+					</tbody>
+				</table>
+				<hr />
+				<h3><u>Payment Details</u></h3>
+				<table class="table" >
+					<thead>
+						<tr class="info">
+							<th scope="col">Number</th>
+							<th scope="col">Date</th>
+							<th scope="col">Mode of payment</th>
+							<th scope="col">Amount</th>
+						</tr>
+					</thead>
+					<tbody id="payments_details">
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
@@ -219,13 +367,13 @@ function getResponseObj(response){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-03-30 07:11:00</sys_created_on>
         <sys_id>c381e6b04f20bf40a0a27bb28110c7cc</sys_id>
-        <sys_mod_count>40</sys_mod_count>
+        <sys_mod_count>76</sys_mod_count>
         <sys_name>customer_report</sys_name>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
         <sys_policy/>
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sys_ui_page_c381e6b04f20bf40a0a27bb28110c7cc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-04-12 17:32:10</sys_updated_on>
+        <sys_updated_on>2019-06-24 17:20:50</sys_updated_on>
     </sys_ui_page>
 </record_update>

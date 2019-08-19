@@ -82,7 +82,7 @@ function getResponseObj(response){
 	cell51.innerHTML = "<h4><b>"+tot_batha+"</b></h4>";
 	var cell61 = row1.insertCell();
 	cell61.innerHTML = "<h4><b>"+tot_total_bill+"</b></h4>";
-	g_form.setValue('total_sales_amount',tot_total_bill);
+	//g_form.setValue('total_sales_amount',tot_total_bill);
 
 	paymentsObj = JSON.parse(paymentsObj);
 	var paymentslen = paymentsObj.length;
@@ -94,9 +94,9 @@ function getResponseObj(response){
 			celpl0.innerHTML = "<h4><b>"+paymentsObj[j].mode_of_payment+"</b></h4>";
 			var celpl1 = rowp.insertCell();
 			celpl1.innerHTML = "<h4><b>"+paymentsObj[j].amt+"</b></h4>";
-			g_form.setValue('total_payments',paymentsObj[j].amt);
+			//g_form.setValue('total_payments',paymentsObj[j].amt);
 			due_amount = parseFloat(tot_total_bill) - parseFloat(paymentsObj[j].amt);
-			g_form.setValue('due_amount',due_amount.toFixed(2));
+			//g_form.setValue('due_amount',due_amount.toFixed(2));
 		}else{
 			var celp0 = rowp.insertCell();
 			celp0.textContent = paymentsObj[j].mode_of_payment;
@@ -118,7 +118,7 @@ function getResponseObj(response){
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>12f94b724f183b40a0a27bb28110c7f4</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name>update UI macro</sys_name>
         <sys_overrides/>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
@@ -126,7 +126,7 @@ function getResponseObj(response){
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sys_script_client_12f94b724f183b40a0a27bb28110c7f4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-04-12 17:28:28</sys_updated_on>
+        <sys_updated_on>2019-06-23 05:42:43</sys_updated_on>
         <table>x_67546_crusher_customer</table>
         <type>onLoad</type>
         <ui_type>0</ui_type>
