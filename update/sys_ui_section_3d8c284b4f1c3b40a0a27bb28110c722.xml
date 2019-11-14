@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="Totals" section_id="3d8c284b4f1c3b40a0a27bb28110c722" sys_domain="global" table="x_67546_crusher_customer" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>x_67546_crusher_crusher_test.xml</element>

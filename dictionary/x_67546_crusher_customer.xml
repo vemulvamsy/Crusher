@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Customer" max_length="40" name="x_67546_crusher_customer" type="collection">
         <element label="40mm total amount" max_length="20" name="40mm_total_amount" type="decimal"/>
         <element label="40mm total bill amount" max_length="20" name="40mm_total_bill_amount" type="decimal"/>

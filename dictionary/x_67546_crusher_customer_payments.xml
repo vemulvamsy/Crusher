@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Customer Payments" max_length="40" name="x_67546_crusher_customer_payments" type="collection">
         <element label="Amount" mandatory="true" max_length="20" name="amount" type="decimal"/>
         <element label="Customer" mandatory="true" max_length="32" name="customer" reference="x_67546_crusher_customer" type="reference"/>
@@ -7,14 +6,15 @@
         <element label="Date" mandatory="true" max_length="40" name="date" type="glide_date"/>
         <element choice="3" default="Cash" label="Mode of payment" mandatory="true" max_length="40" name="mode_of_payment" type="choice">
             <choice>
-                <element label="Cash" sequence="0" value="Cash"/>
-                <element label="DD" sequence="1" value="DD"/>
-                <element label="NEFT" sequence="2" value="NEFT"/>
-                <element label="RTGS" sequence="3" value="RTGS"/>
-                <element label="Cheque" sequence="4" value="Cheque"/>
+                <element inactive_on_update="false" label="Cash" sequence="0" value="Cash"/>
+                <element inactive_on_update="false" label="DD" sequence="1" value="DD"/>
+                <element inactive_on_update="false" label="NEFT" sequence="2" value="NEFT"/>
+                <element inactive_on_update="false" label="RTGS" sequence="3" value="RTGS"/>
+                <element inactive_on_update="false" label="Cheque" sequence="4" value="Cheque"/>
             </choice>
         </element>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Remarks" max_length="1000" name="remarks" type="string"/>
         <index name="index">
             <element name="customer_company"/>
         </index>

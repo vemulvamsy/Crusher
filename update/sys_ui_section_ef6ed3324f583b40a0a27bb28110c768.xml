@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="" section_id="ef6ed3324f583b40a0a27bb28110c768" sys_domain="global" table="x_67546_crusher_customer_payments" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 06:27:05</sys_created_on>
-            <sys_id>8b70eb724f583b40a0a27bb28110c700</sys_id>
+            <sys_created_on>2019-10-30 14:14:58</sys_created_on>
+            <sys_id>f9594af54f34c410a0a27bb28110c754</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer_payments" sys_domain="global" view="Default view">ef6ed3324f583b40a0a27bb28110c768</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 06:27:05</sys_updated_on>
+            <sys_updated_on>2019-10-30 14:14:58</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -19,13 +18,13 @@
             <element>date</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 06:27:05</sys_created_on>
-            <sys_id>0f70eb724f583b40a0a27bb28110c700</sys_id>
+            <sys_created_on>2019-10-30 14:14:58</sys_created_on>
+            <sys_id>7d594af54f34c410a0a27bb28110c754</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer_payments" sys_domain="global" view="Default view">ef6ed3324f583b40a0a27bb28110c768</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 06:27:05</sys_updated_on>
+            <sys_updated_on>2019-10-30 14:14:58</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -33,13 +32,13 @@
             <element>customer</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 06:27:05</sys_created_on>
-            <sys_id>8f70eb724f583b40a0a27bb28110c700</sys_id>
+            <sys_created_on>2019-10-30 14:14:58</sys_created_on>
+            <sys_id>fd594af54f34c410a0a27bb28110c754</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer_payments" sys_domain="global" view="Default view">ef6ed3324f583b40a0a27bb28110c768</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 06:27:05</sys_updated_on>
+            <sys_updated_on>2019-10-30 14:14:58</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -47,13 +46,13 @@
             <element>.split</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 06:27:05</sys_created_on>
-            <sys_id>0370eb724f583b40a0a27bb28110c701</sys_id>
+            <sys_created_on>2019-10-30 14:14:58</sys_created_on>
+            <sys_id>71594af54f34c410a0a27bb28110c755</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer_payments" sys_domain="global" view="Default view">ef6ed3324f583b40a0a27bb28110c768</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 06:27:05</sys_updated_on>
+            <sys_updated_on>2019-10-30 14:14:58</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -61,13 +60,13 @@
             <element>customer_company</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 06:27:05</sys_created_on>
-            <sys_id>8370eb724f583b40a0a27bb28110c701</sys_id>
+            <sys_created_on>2019-10-30 14:14:58</sys_created_on>
+            <sys_id>f1594af54f34c410a0a27bb28110c755</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer_payments" sys_domain="global" view="Default view">ef6ed3324f583b40a0a27bb28110c768</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 06:27:05</sys_updated_on>
+            <sys_updated_on>2019-10-30 14:14:58</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -75,13 +74,13 @@
             <element>mode_of_payment</element>
             <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 06:27:05</sys_created_on>
-            <sys_id>0770eb724f583b40a0a27bb28110c701</sys_id>
+            <sys_created_on>2019-10-30 14:14:58</sys_created_on>
+            <sys_id>75594af54f34c410a0a27bb28110c755</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer_payments" sys_domain="global" view="Default view">ef6ed3324f583b40a0a27bb28110c768</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 06:27:05</sys_updated_on>
+            <sys_updated_on>2019-10-30 14:14:58</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -89,13 +88,41 @@
             <element>amount</element>
             <position>6</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 06:27:05</sys_created_on>
-            <sys_id>8770eb724f583b40a0a27bb28110c701</sys_id>
+            <sys_created_on>2019-10-30 14:14:58</sys_created_on>
+            <sys_id>f5594af54f34c410a0a27bb28110c755</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer_payments" sys_domain="global" view="Default view">ef6ed3324f583b40a0a27bb28110c768</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 06:27:05</sys_updated_on>
+            <sys_updated_on>2019-10-30 14:14:58</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-10-30 14:14:58</sys_created_on>
+            <sys_id>79594af54f34c410a0a27bb28110c755</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer_payments" sys_domain="global" view="Default view">ef6ed3324f583b40a0a27bb28110c768</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-10-30 14:14:58</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>remarks</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2019-10-30 14:14:58</sys_created_on>
+            <sys_id>f9594af54f34c410a0a27bb28110c755</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer_payments" sys_domain="global" view="Default view">ef6ed3324f583b40a0a27bb28110c768</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2019-10-30 14:14:58</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

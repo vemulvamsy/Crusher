@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_documentation element="cost_per_cft_kg" label="Cost per 100 CFT / 1 TON" language="en" table="x_67546_crusher_sales">
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>cost_per_cft_kg</element>

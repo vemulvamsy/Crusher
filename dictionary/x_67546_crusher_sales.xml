@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
-    <element label="Sales" max_length="40" name="x_67546_crusher_sales" type="collection">
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Sales" max_length="40" name="x_67546_crusher_sales" sizeclass="5062" type="collection">
         <element default="0" label="Batha" mandatory="true" max_length="20" name="batha" type="decimal"/>
         <element label="Bill Amount" max_length="20" name="bill_amount" read_only="true" type="decimal"/>
         <element label="Bill Number" max_length="40" name="bill_number" type="string"/>
@@ -16,8 +15,8 @@
         <element label="Other customer name" max_length="100" name="other_customer_name" type="string"/>
         <element choice="3" default="cft" label="Qty Type" mandatory="true" max_length="40" name="qty_type" type="choice">
             <choice>
-                <element label="CFT" sequence="0" value="cft"/>
-                <element label="TON" sequence="1" value="kg"/>
+                <element inactive_on_update="false" label="CFT" sequence="0" value="cft"/>
+                <element inactive_on_update="false" label="TON" sequence="1" value="kg"/>
             </choice>
         </element>
         <element label="Quantity" mandatory="true" max_length="50" name="quantity" type="decimal"/>
