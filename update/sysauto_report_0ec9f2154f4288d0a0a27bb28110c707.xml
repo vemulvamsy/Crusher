@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_report">
     <sysauto_report action="INSERT_OR_UPDATE">
         <active>true</active>
-        <address_list/>
+        <address_list>sravankumar.kreddy@gmail.com, saritharao2007@gmail.com, vemul.vamsy@gmail.com</address_list>
         <condition/>
         <conditional>false</conditional>
         <group_list/>
         <include_detail>false</include_detail>
         <include_with/>
-        <name>Crusher - Customer Full Backup</name>
+        <name>Crusher Sales Full Backup</name>
         <omit_if_no_records>false</omit_if_no_records>
         <output_type>XLSX</output_type>
         <page_height_in_pixels>612</page_height_in_pixels>
         <page_size>Letter</page_size>
         <page_width_in_pixels>792</page_width_in_pixels>
-        <report display_value="crusher customer">4b58a26a4f010010a0a27bb28110c7f8</report>
-        <report_body><![CDATA[<p>Hi,</p>
-<p>&nbsp;</p>
-<p>Crusher - Customer</p>]]></report_body>
-        <report_title>Crusher customer report Full Backup</report_title>
+        <report display_value="Crusher Sales">755ea6194f0288d0a0a27bb28110c7b3</report>
+        <report_body><![CDATA[<p>Crusher Sales</p>]]></report_body>
+        <report_title>Crusher Sales Full Backup</report_title>
         <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
         <run_as_tz/>
         <run_dayofmonth>1</run_dayofmonth>
         <run_dayofweek>1</run_dayofweek>
         <run_period>1970-01-01 12:00:00</run_period>
-        <run_start>2019-11-14 10:35:19</run_start>
+        <run_start>2019-12-30 07:48:08</run_start>
         <run_time>1970-01-01 05:00:00</run_time>
         <run_type>weekly</run_type>
         <sys_class_name>sysauto_report</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2019-11-14 10:43:36</sys_created_on>
-        <sys_id>a6e62a664f010010a0a27bb28110c7a3</sys_id>
+        <sys_created_on>2019-12-30 07:49:40</sys_created_on>
+        <sys_id>0ec9f2154f4288d0a0a27bb28110c707</sys_id>
         <sys_mod_count>4</sys_mod_count>
-        <sys_name>Crusher - Customer Full Backup</sys_name>
+        <sys_name>Crusher Sales Full Backup</sys_name>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
         <sys_policy/>
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
-        <sys_update_name>sysauto_report_a6e62a664f010010a0a27bb28110c7a3</sys_update_name>
+        <sys_update_name>sysauto_report_0ec9f2154f4288d0a0a27bb28110c707</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-12-30 08:05:02</sys_updated_on>
+        <sys_updated_on>2019-12-30 08:14:18</sys_updated_on>
         <upgrade_safe>false</upgrade_safe>
         <user_list>sravankumar.kreddy@gmail.com,saritharao2007@gmail.com,vemul.vamsy@gmail.com</user_list>
         <zip>false</zip>

@@ -38,7 +38,7 @@
         <end_time/>
         <exp_report_attrs>true</exp_report_attrs>
         <field/>
-        <field_list>name,company.company_name,total_sales_amount,total_payments,due_amount,mobile_number,sys_created_on,sys_created_by,sys_updated_on,sys_updated_by</field_list>
+        <field_list>date,employee,expenditure_type,other_type,amount,voucher_number,sys_created_on,sys_created_by,sys_updated_on,sys_updated_by</field_list>
         <filter/>
         <from/>
         <funnel_neck_percent>30</funnel_neck_percent>
@@ -92,18 +92,18 @@
         <sumfield/>
         <sys_class_name>sys_report</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2019-11-14 10:41:38</sys_created_on>
-        <sys_id>4b58a26a4f010010a0a27bb28110c7f8</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>crusher customer</sys_name>
+        <sys_created_on>2019-12-30 06:48:06</sys_created_on>
+        <sys_id>3a0c26554f0288d0a0a27bb28110c7ca</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Crusher Expenditure</sys_name>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
         <sys_policy/>
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
-        <sys_update_name>sys_report_4b58a26a4f010010a0a27bb28110c7f8</sys_update_name>
+        <sys_update_name>sys_report_3a0c26554f0288d0a0a27bb28110c7ca</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-12-30 06:36:28</sys_updated_on>
-        <table>x_67546_crusher_customer</table>
-        <title>crusher customer</title>
+        <sys_updated_on>2019-12-30 07:33:57</sys_updated_on>
+        <table>x_67546_crusher_expenditure</table>
+        <title>Crusher Expenditure</title>
         <title_horizontal_alignment>center</title_horizontal_alignment>
         <title_vertical_alignment>top</title_vertical_alignment>
         <to/>

@@ -1,154 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_67546_crusher_customer" version="2" view="RPT4b58a26a4f010010a0a27bb28110c7f8">
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_67546_crusher_customer" version="2" view="RPT06b08b5d4f4288d0a0a27bb28110c7e1">
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>name</element>
-            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="c358e26a4f010010a0a27bb28110c700">d869e2514f0288d0a0a27bb28110c724</list_id>
+            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="8eb08b5d4f4288d0a0a27bb28110c7e7">8a92cbdd4f4288d0a0a27bb28110c7b9</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-12-30 06:36:28</sys_created_on>
-            <sys_id>1469e2514f0288d0a0a27bb28110c725</sys_id>
+            <sys_created_on>2019-12-30 08:26:38</sys_created_on>
+            <sys_id>c292cbdd4f4288d0a0a27bb28110c7ba</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-12-30 06:36:28</sys_updated_on>
+            <sys_updated_on>2019-12-30 08:26:38</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>company.company_name</element>
-            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="c358e26a4f010010a0a27bb28110c700">d869e2514f0288d0a0a27bb28110c724</list_id>
+            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="8eb08b5d4f4288d0a0a27bb28110c7e7">8a92cbdd4f4288d0a0a27bb28110c7b9</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-12-30 06:36:28</sys_created_on>
-            <sys_id>9469e2514f0288d0a0a27bb28110c725</sys_id>
+            <sys_created_on>2019-12-30 08:26:38</sys_created_on>
+            <sys_id>4692cbdd4f4288d0a0a27bb28110c7ba</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-12-30 06:36:28</sys_updated_on>
+            <sys_updated_on>2019-12-30 08:26:38</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>total_sales_amount</element>
-            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="c358e26a4f010010a0a27bb28110c700">d869e2514f0288d0a0a27bb28110c724</list_id>
+            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="8eb08b5d4f4288d0a0a27bb28110c7e7">8a92cbdd4f4288d0a0a27bb28110c7b9</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-12-30 06:36:28</sys_created_on>
-            <sys_id>1869e2514f0288d0a0a27bb28110c725</sys_id>
+            <sys_created_on>2019-12-30 08:26:38</sys_created_on>
+            <sys_id>c692cbdd4f4288d0a0a27bb28110c7ba</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-12-30 06:36:28</sys_updated_on>
+            <sys_updated_on>2019-12-30 08:26:38</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>total_payments</element>
-            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="c358e26a4f010010a0a27bb28110c700">d869e2514f0288d0a0a27bb28110c724</list_id>
+            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="8eb08b5d4f4288d0a0a27bb28110c7e7">8a92cbdd4f4288d0a0a27bb28110c7b9</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-12-30 06:36:28</sys_created_on>
-            <sys_id>9869e2514f0288d0a0a27bb28110c725</sys_id>
+            <sys_created_on>2019-12-30 08:26:38</sys_created_on>
+            <sys_id>4a92cbdd4f4288d0a0a27bb28110c7ba</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-12-30 06:36:28</sys_updated_on>
+            <sys_updated_on>2019-12-30 08:26:38</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>due_amount</element>
-            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="c358e26a4f010010a0a27bb28110c700">d869e2514f0288d0a0a27bb28110c724</list_id>
+            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="8eb08b5d4f4288d0a0a27bb28110c7e7">8a92cbdd4f4288d0a0a27bb28110c7b9</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-12-30 06:36:28</sys_created_on>
-            <sys_id>1c69e2514f0288d0a0a27bb28110c725</sys_id>
+            <sys_created_on>2019-12-30 08:26:38</sys_created_on>
+            <sys_id>ca92cbdd4f4288d0a0a27bb28110c7ba</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-12-30 06:36:28</sys_updated_on>
+            <sys_updated_on>2019-12-30 08:26:38</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>mobile_number</element>
-            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="c358e26a4f010010a0a27bb28110c700">d869e2514f0288d0a0a27bb28110c724</list_id>
+            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="8eb08b5d4f4288d0a0a27bb28110c7e7">8a92cbdd4f4288d0a0a27bb28110c7b9</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>5</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-12-30 06:36:28</sys_created_on>
-            <sys_id>9c69e2514f0288d0a0a27bb28110c725</sys_id>
+            <sys_created_on>2019-12-30 08:26:38</sys_created_on>
+            <sys_id>4e92cbdd4f4288d0a0a27bb28110c7ba</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-12-30 06:36:28</sys_updated_on>
+            <sys_updated_on>2019-12-30 08:26:38</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>sys_created_on</element>
-            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="c358e26a4f010010a0a27bb28110c700">d869e2514f0288d0a0a27bb28110c724</list_id>
+            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="8eb08b5d4f4288d0a0a27bb28110c7e7">8a92cbdd4f4288d0a0a27bb28110c7b9</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>6</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-12-30 06:36:28</sys_created_on>
-            <sys_id>1069e2514f0288d0a0a27bb28110c726</sys_id>
+            <sys_created_on>2019-12-30 08:26:38</sys_created_on>
+            <sys_id>ce92cbdd4f4288d0a0a27bb28110c7ba</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-12-30 06:36:28</sys_updated_on>
+            <sys_updated_on>2019-12-30 08:26:38</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>sys_created_by</element>
-            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="c358e26a4f010010a0a27bb28110c700">d869e2514f0288d0a0a27bb28110c724</list_id>
+            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="8eb08b5d4f4288d0a0a27bb28110c7e7">8a92cbdd4f4288d0a0a27bb28110c7b9</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>7</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-12-30 06:36:28</sys_created_on>
-            <sys_id>9069e2514f0288d0a0a27bb28110c726</sys_id>
+            <sys_created_on>2019-12-30 08:26:38</sys_created_on>
+            <sys_id>4292cbdd4f4288d0a0a27bb28110c7bb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-12-30 06:36:28</sys_updated_on>
+            <sys_updated_on>2019-12-30 08:26:38</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>sys_updated_on</element>
-            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="c358e26a4f010010a0a27bb28110c700">d869e2514f0288d0a0a27bb28110c724</list_id>
+            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="8eb08b5d4f4288d0a0a27bb28110c7e7">8a92cbdd4f4288d0a0a27bb28110c7b9</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>8</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-12-30 06:36:28</sys_created_on>
-            <sys_id>1069aa514f0288d0a0a27bb28110c757</sys_id>
+            <sys_created_on>2019-12-30 08:26:38</sys_created_on>
+            <sys_id>c292cbdd4f4288d0a0a27bb28110c7bb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-12-30 06:36:28</sys_updated_on>
+            <sys_updated_on>2019-12-30 08:26:38</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>sys_updated_by</element>
-            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="c358e26a4f010010a0a27bb28110c700">d869e2514f0288d0a0a27bb28110c724</list_id>
+            <list_id display_value="x_67546_crusher_customer" element="NULL" name="x_67546_crusher_customer" parent="NULL" relationship="NULL" sys_domain="global" view="8eb08b5d4f4288d0a0a27bb28110c7e7">8a92cbdd4f4288d0a0a27bb28110c7b9</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>9</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-12-30 06:36:28</sys_created_on>
-            <sys_id>9069aa514f0288d0a0a27bb28110c757</sys_id>
+            <sys_created_on>2019-12-30 08:26:38</sys_created_on>
+            <sys_id>4692cbdd4f4288d0a0a27bb28110c7bb</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-12-30 06:36:28</sys_updated_on>
+            <sys_updated_on>2019-12-30 08:26:38</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -162,20 +162,20 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-12-30 06:36:28</sys_created_on>
+            <sys_created_on>2019-12-30 08:26:38</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>d869e2514f0288d0a0a27bb28110c724</sys_id>
+            <sys_id>8a92cbdd4f4288d0a0a27bb28110c7b9</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_67546_crusher_customer</sys_name>
             <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
             <sys_policy/>
             <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
-            <sys_update_name>sys_ui_list_x_67546_crusher_customer_RPT4b58a26a4f010010a0a27bb28110c7f8</sys_update_name>
+            <sys_update_name>sys_ui_list_x_67546_crusher_customer_RPT06b08b5d4f4288d0a0a27bb28110c7e1</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-12-30 06:36:28</sys_updated_on>
+            <sys_updated_on>2019-12-30 08:26:38</sys_updated_on>
             <sys_user/>
-            <view display_value="Rpt4b58a26a4f010010a0a27bb28110c7f8" name="RPT4b58a26a4f010010a0a27bb28110c7f8">c358e26a4f010010a0a27bb28110c700</view>
+            <view display_value="Rpt06b08b5d4f4288d0a0a27bb28110c7e1" name="RPT06b08b5d4f4288d0a0a27bb28110c7e1">8eb08b5d4f4288d0a0a27bb28110c7e7</view>
             <view_name/>
         </sys_ui_list>
     </sys_ui_list>

@@ -43,7 +43,9 @@
 	}
 	var grc = new GlideRecord('x_67546_crusher_customer');
 	if(grc.get(current.customer)){
+		var sales = grc.total_sales_amount;
 		grc.total_payments = total;
+		grc.due_amount = parseFloat(sales) - total;
 		grc.update();
 	}
 
@@ -58,7 +60,9 @@
 	}
 	var grcp = new GlideRecord('x_67546_crusher_customer');
 	if(grcp.get(previous.customer)){
+		var saleso = grcp.total_sales_amount;
 		grcp.total_payments = totalp;
+		grcp.due_amount = parseFloat(saleso) - totalp;
 		grcp.update();
 	}
 
@@ -70,7 +74,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>20aab30c4f523780a0a27bb28110c751</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>Update customer totals on chg of payment</sys_name>
         <sys_overrides/>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
@@ -78,7 +82,7 @@
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sys_script_20aab30c4f523780a0a27bb28110c751</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-10-30 15:09:21</sys_updated_on>
+        <sys_updated_on>2020-01-01 15:09:17</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>
