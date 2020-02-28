@@ -3,242 +3,257 @@
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>bill_number</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>82b00cb04f8df3c0a0a27bb28110c798</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>fcff793c075bcc102e76fea89c1ed008</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>date</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>0ab00cb04f8df3c0a0a27bb28110c798</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>b4ff793c075bcc102e76fea89c1ed009</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>customer_name</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>8ab00cb04f8df3c0a0a27bb28110c798</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>38ff793c075bcc102e76fea89c1ed009</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>other_customer_name</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>0eb00cb04f8df3c0a0a27bb28110c798</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>b8ff793c075bcc102e76fea89c1ed009</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>vehicle_number</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>8eb00cb04f8df3c0a0a27bb28110c798</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>3cff793c075bcc102e76fea89c1ed009</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>introducer</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>5</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>02b00cb04f8df3c0a0a27bb28110c799</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>bcff793c075bcc102e76fea89c1ed009</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>item_type</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>6</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>82b00cb04f8df3c0a0a27bb28110c799</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>30ff793c075bcc102e76fea89c1ed00a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>quantity</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>7</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>06b00cb04f8df3c0a0a27bb28110c799</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>b0ff793c075bcc102e76fea89c1ed00a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>qty_type</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>8</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>86b00cb04f8df3c0a0a27bb28110c799</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>34ff793c075bcc102e76fea89c1ed00a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>number_of_trips</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>true</max_value>
             <min_value>true</min_value>
             <position>9</position>
             <sum>true</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>0ab00cb04f8df3c0a0a27bb28110c799</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>b4ff793c075bcc102e76fea89c1ed00a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>cost_per_cft_kg</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>true</max_value>
             <min_value>true</min_value>
             <position>10</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>8ab00cb04f8df3c0a0a27bb28110c799</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>38ff793c075bcc102e76fea89c1ed00a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>bill_amount</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>true</max_value>
             <min_value>true</min_value>
             <position>11</position>
             <sum>true</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>0eb00cb04f8df3c0a0a27bb28110c799</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>b8ff793c075bcc102e76fea89c1ed00a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>transport_charge</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>12</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>8eb00cb04f8df3c0a0a27bb28110c799</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>3cff793c075bcc102e76fea89c1ed00a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>batha</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>13</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>02b00cb04f8df3c0a0a27bb28110c79a</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>bcff793c075bcc102e76fea89c1ed00a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>total_bill</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>true</max_value>
             <min_value>true</min_value>
             <position>14</position>
             <sum>true</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>82b00cb04f8df3c0a0a27bb28110c79a</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>30ff793c075bcc102e76fea89c1ed00b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>location</element>
-            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">4ab00cb04f8df3c0a0a27bb28110c797</list_id>
+            <element>total_without_batha</element>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>15</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
-            <sys_id>06b00cb04f8df3c0a0a27bb28110c79a</sys_id>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>b0ff793c075bcc102e76fea89c1ed00b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>location</element>
+            <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>16</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
+            <sys_id>34ff793c075bcc102e76fea89c1ed00b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -252,10 +267,10 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-04-23 15:48:41</sys_created_on>
+            <sys_created_on>2020-02-28 17:36:58</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>4ab00cb04f8df3c0a0a27bb28110c797</sys_id>
+            <sys_id>34ff793c075bcc102e76fea89c1ed007</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_67546_crusher_sales</sys_name>
             <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
@@ -263,7 +278,7 @@
             <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
             <sys_update_name>sys_ui_list_x_67546_crusher_sales_null</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-04-23 15:48:41</sys_updated_on>
+            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
             <sys_user/>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>

@@ -29,6 +29,7 @@
         <content_type>image/jpeg</content_type>
         <encryption_context/>
         <file_name>image</file_name>
+        <hash/>
         <image_height>1280</image_height>
         <image_width>1280</image_width>
         <size_bytes>113691</size_bytes>

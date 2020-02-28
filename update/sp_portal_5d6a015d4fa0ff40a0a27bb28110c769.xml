@@ -20,16 +20,17 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-03-31 13:56:40</sys_created_on>
         <sys_id>5d6a015d4fa0ff40a0a27bb28110c769</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>arjun crushers</sys_name>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
         <sys_policy/>
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sp_portal_5d6a015d4fa0ff40a0a27bb28110c769</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-03-31 14:01:47</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2020-02-19 07:44:56</sys_updated_on>
         <theme/>
         <title>arjun crushers</title>
+        <ts_index_group display_value="portal_index_group">2c3e7d1513c93300e618bfd63244b0d7</ts_index_group>
         <url_suffix>ac</url_suffix>
     </sp_portal>
     <sys_translated_text action="delete_multiple" query="documentkey=5d6a015d4fa0ff40a0a27bb28110c769"/>
@@ -40,6 +41,7 @@
         <content_type>image/jpeg</content_type>
         <encryption_context/>
         <file_name>logo</file_name>
+        <hash/>
         <image_height>1280</image_height>
         <image_width>1280</image_width>
         <size_bytes>113691</size_bytes>

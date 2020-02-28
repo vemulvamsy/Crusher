@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Customer Company" max_length="40" name="x_67546_crusher_customer_company" type="collection">
+    <element label="Customer Company" max_length="40" name="x_67546_crusher_customer_company" sizeclass="21" type="collection">
         <element label="Address" max_length="500" name="address" type="string"/>
         <element display="true" label="Company name" max_length="200" name="company_name" type="string"/>
     </element>

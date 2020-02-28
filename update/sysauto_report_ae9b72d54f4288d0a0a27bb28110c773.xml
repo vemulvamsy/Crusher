@@ -2,8 +2,10 @@
     <sysauto_report action="INSERT_OR_UPDATE">
         <active>true</active>
         <address_list>sravankumar.kreddy@gmail.com, saritharao2007@gmail.com, vemul.vamsy@gmail.com</address_list>
+        <business_calendar/>
         <condition/>
         <conditional>false</conditional>
+        <entered_time/>
         <group_list/>
         <include_detail>false</include_detail>
         <include_with/>
@@ -36,6 +38,7 @@
         <sys_update_name>sysauto_report_ae9b72d54f4288d0a0a27bb28110c773</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2019-12-30 08:03:40</sys_updated_on>
+        <time_zone/>
         <upgrade_safe>false</upgrade_safe>
         <user_list>sravankumar.kreddy@gmail.com,saritharao2007@gmail.com,vemul.vamsy@gmail.com</user_list>
         <zip>false</zip>

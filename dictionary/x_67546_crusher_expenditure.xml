@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Expenditure" max_length="40" name="x_67546_crusher_expenditure" type="collection">
+    <element label="Expenditure" max_length="40" name="x_67546_crusher_expenditure" sizeclass="0" type="collection">
         <element label="Amount" mandatory="true" max_length="20" name="amount" type="decimal"/>
         <element label="Date" mandatory="true" max_length="40" name="date" type="glide_date"/>
         <element label="Employee" mandatory="true" max_length="32" name="employee" reference="x_67546_crusher_employees" type="reference"/>

@@ -11,7 +11,9 @@
         <name>Sales find bill amt oc no_trips</name>
         <order>100</order>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
-
+if (newValue === '') {
+		return;
+	}
 
 	var qty = g_form.getDecimalValue('quantity');
 	var no_of_trips =  g_form.getIntValue('number_of_trips');
@@ -25,8 +27,10 @@
 		cost_per_cft = cost_per_cft;
 	var bill_amt = qty * no_of_trips * cost_per_cft;
 	var total_amt = bill_amt + transport_charge + batha;
+	var total_amt_wo_batha = bill_amt + transport_charge;
 	g_form.setValue('bill_amount',bill_amt.toFixed(2));
 	g_form.setValue('total_bill',total_amt.toFixed(2));
+	g_form.setValue('total_without_batha',total_amt_wo_batha.toFixed(2));
 	
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
@@ -35,7 +39,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a1afa0764f503b40a0a27bb28110c710</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>Sales find bill amt oc no_trips</sys_name>
         <sys_overrides/>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
@@ -43,7 +47,7 @@
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sys_script_client_a1afa0764f503b40a0a27bb28110c710</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-05-10 04:15:11</sys_updated_on>
+        <sys_updated_on>2020-02-28 17:54:37</sys_updated_on>
         <table>x_67546_crusher_sales</table>
         <type>onChange</type>
         <ui_type>0</ui_type>

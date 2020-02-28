@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Introducer" max_length="40" name="x_67546_crusher_introducer" type="collection">
+    <element label="Introducer" max_length="40" name="x_67546_crusher_introducer" sizeclass="10" type="collection">
         <element label="Mobile number" max_length="30" name="mobile_number" type="string"/>
         <element display="true" label="Name" max_length="200" name="name" type="string"/>
     </element>
