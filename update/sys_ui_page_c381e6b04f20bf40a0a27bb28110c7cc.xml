@@ -21,12 +21,15 @@ function getCustomerData() {
 	var from_date = '';
 	var to_date = '';
 	if(cbox){
-		var fd = gel("from_date").value.split(" ")[0].split('-');
-		var td = gel("to_date").value.split(" ")[0].split('-');
-		//'06-01-2019';
-		from_date = fd[2]+"-"+fd[0]+"-"+fd[1];
-		to_date = td[2]+"-"+td[0]+"-"+td[1];
-		
+// 		var fd = gel("from_date").value.split(" ")[0].split('-');
+// 		var td = gel("to_date").value.split(" ")[0].split('-');
+// 		//'06-01-2019';
+// 		from_date = fd[2]+"-"+fd[0]+"-"+fd[1];
+// 		to_date = td[2]+"-"+td[0]+"-"+td[1];
+		from_date = gel("from_date").value.split(" ")[0];
+		to_date = gel("to_date").value.split(" ")[0];
+		console.log("from_date: "+from_date);
+		console.log("to_date: "+to_date);
 // 		alert(from_date);
 // 		alert(to_date);
 	}
@@ -366,13 +369,13 @@ function getResponseObj(response){
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-03-30 07:11:00</sys_created_on>
         <sys_id>c381e6b04f20bf40a0a27bb28110c7cc</sys_id>
-        <sys_mod_count>76</sys_mod_count>
+        <sys_mod_count>78</sys_mod_count>
         <sys_name>customer_report</sys_name>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
         <sys_policy/>
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sys_ui_page_c381e6b04f20bf40a0a27bb28110c7cc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-06-24 17:20:50</sys_updated_on>
+        <sys_updated_on>2020-05-16 15:30:14</sys_updated_on>
     </sys_ui_page>
 </record_update>

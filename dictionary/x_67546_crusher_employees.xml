@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Employees" max_length="40" name="x_67546_crusher_employees" sizeclass="6" type="collection">
+    <element label="Employees" max_length="40" name="x_67546_crusher_employees" sizeclass="19" type="collection">
         <element label="Address" max_length="500" name="address" type="string"/>
         <element label="Email ID" max_length="150" name="email_id" type="string"/>
         <element label="Mobile number" max_length="20" name="mobile_number" type="string"/>

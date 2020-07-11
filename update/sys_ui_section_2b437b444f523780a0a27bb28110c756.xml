@@ -4,13 +4,13 @@
             <element>date</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-06-23 15:46:11</sys_created_on>
-            <sys_id>d8290e944f5a3780a0a27bb28110c76e</sys_id>
+            <sys_created_on>2020-05-18 11:29:14</sys_created_on>
+            <sys_id>4efaaca20778d8102e76fea89c1ed0dc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_expenditure" sys_domain="global" view="Default view">2b437b444f523780a0a27bb28110c756</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-06-23 15:46:11</sys_updated_on>
+            <sys_updated_on>2020-05-18 11:29:14</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>voucher_number</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-06-23 15:46:11</sys_created_on>
-            <sys_id>5c290e944f5a3780a0a27bb28110c76e</sys_id>
+            <sys_created_on>2020-05-18 11:29:14</sys_created_on>
+            <sys_id>cefaaca20778d8102e76fea89c1ed0dc</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_expenditure" sys_domain="global" view="Default view">2b437b444f523780a0a27bb28110c756</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-06-23 15:46:11</sys_updated_on>
+            <sys_updated_on>2020-05-18 11:29:14</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>employee</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-06-23 15:46:11</sys_created_on>
-            <sys_id>dc290e944f5a3780a0a27bb28110c76e</sys_id>
+            <sys_created_on>2020-05-18 11:29:14</sys_created_on>
+            <sys_id>42faaca20778d8102e76fea89c1ed0dd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_expenditure" sys_domain="global" view="Default view">2b437b444f523780a0a27bb28110c756</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-06-23 15:46:11</sys_updated_on>
+            <sys_updated_on>2020-05-18 11:29:14</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>.split</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-06-23 15:46:11</sys_created_on>
-            <sys_id>50290e944f5a3780a0a27bb28110c76f</sys_id>
+            <sys_created_on>2020-05-18 11:29:14</sys_created_on>
+            <sys_id>c2faaca20778d8102e76fea89c1ed0dd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_expenditure" sys_domain="global" view="Default view">2b437b444f523780a0a27bb28110c756</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-06-23 15:46:11</sys_updated_on>
+            <sys_updated_on>2020-05-18 11:29:14</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -60,13 +60,13 @@
             <element>expenditure_type</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-06-23 15:46:11</sys_created_on>
-            <sys_id>d0290e944f5a3780a0a27bb28110c76f</sys_id>
+            <sys_created_on>2020-05-18 11:29:14</sys_created_on>
+            <sys_id>46faaca20778d8102e76fea89c1ed0dd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_expenditure" sys_domain="global" view="Default view">2b437b444f523780a0a27bb28110c756</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-06-23 15:46:11</sys_updated_on>
+            <sys_updated_on>2020-05-18 11:29:14</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -74,13 +74,13 @@
             <element>other_type</element>
             <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-06-23 15:46:11</sys_created_on>
-            <sys_id>54290e944f5a3780a0a27bb28110c76f</sys_id>
+            <sys_created_on>2020-05-18 11:29:14</sys_created_on>
+            <sys_id>c6faaca20778d8102e76fea89c1ed0dd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_expenditure" sys_domain="global" view="Default view">2b437b444f523780a0a27bb28110c756</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-06-23 15:46:11</sys_updated_on>
+            <sys_updated_on>2020-05-18 11:29:14</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -88,13 +88,41 @@
             <element>amount</element>
             <position>6</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-06-23 15:46:11</sys_created_on>
-            <sys_id>d4290e944f5a3780a0a27bb28110c76f</sys_id>
+            <sys_created_on>2020-05-18 11:29:14</sys_created_on>
+            <sys_id>4afaaca20778d8102e76fea89c1ed0dd</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_expenditure" sys_domain="global" view="Default view">2b437b444f523780a0a27bb28110c756</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-06-23 15:46:11</sys_updated_on>
+            <sys_updated_on>2020-05-18 11:29:14</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-18 11:29:14</sys_created_on>
+            <sys_id>cafaaca20778d8102e76fea89c1ed0dd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_expenditure" sys_domain="global" view="Default view">2b437b444f523780a0a27bb28110c756</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-05-18 11:29:14</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>remarks</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-05-18 11:29:14</sys_created_on>
+            <sys_id>4efaaca20778d8102e76fea89c1ed0dd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_expenditure" sys_domain="global" view="Default view">2b437b444f523780a0a27bb28110c756</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-05-18 11:29:14</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

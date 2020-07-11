@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Customer" max_length="40" name="x_67546_crusher_customer" sizeclass="155" type="collection">
+    <element label="Customer" max_length="40" name="x_67546_crusher_customer" sizeclass="187" type="collection">
         <element label="40mm total amount" max_length="20" name="40mm_total_amount" type="decimal"/>
         <element label="40mm total bill amount" max_length="20" name="40mm_total_bill_amount" type="decimal"/>
         <element label="40mm total no of trips" max_length="20" name="40mm_total_no_of_trips" type="decimal"/>
@@ -11,9 +11,14 @@
         <element label="Mobile number" max_length="20" name="mobile_number" type="string"/>
         <element display="true" label="Name" max_length="200" name="name" type="string"/>
         <element label="Total Due without Batha" max_length="20" name="total_due_without_batha" read_only="true" type="decimal"/>
+        <element label="Total Due with GST and without Batha" max_length="20" name="total_due_with_gst_and_without_batha" type="decimal"/>
+        <element label="Total Due with GST and with Batha" max_length="20" name="total_due_with_gst_and_with_batha" type="decimal"/>
+        <element label="Total GST Amount" max_length="20" name="total_gst_amount" type="decimal"/>
         <element label="Total payments" max_length="20" name="total_payments" read_only="true" type="decimal"/>
         <element label="Total sales amount" max_length="20" name="total_sales_amount" read_only="true" type="decimal"/>
         <element label="Total Sales without Batha" max_length="20" name="total_sales_without_batha" read_only="true" type="decimal"/>
+        <element label="Total Sales with GST without Batha" max_length="20" name="total_sales_with_gst" type="decimal"/>
+        <element label="Total Sales with GST and With Batha" max_length="20" name="total_sales_with_gst_and_with_batha" type="decimal"/>
         <index name="index">
             <element name="company"/>
         </index>

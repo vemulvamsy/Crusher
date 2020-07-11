@@ -202,13 +202,13 @@
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>13</position>
-            <sum>false</sum>
+            <sum>true</sum>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2020-02-28 17:36:58</sys_created_on>
             <sys_id>bcff793c075bcc102e76fea89c1ed00a</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+            <sys_updated_on>2020-04-20 14:18:42</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -229,16 +229,16 @@
             <average_value>false</average_value>
             <element>total_without_batha</element>
             <list_id display_value="x_67546_crusher_sales" element="NULL" name="x_67546_crusher_sales" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">34ff793c075bcc102e76fea89c1ed007</list_id>
-            <max_value>false</max_value>
-            <min_value>false</min_value>
+            <max_value>true</max_value>
+            <min_value>true</min_value>
             <position>15</position>
-            <sum>false</sum>
+            <sum>true</sum>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2020-02-28 17:36:58</sys_created_on>
             <sys_id>b0ff793c075bcc102e76fea89c1ed00b</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-02-28 17:36:58</sys_updated_on>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+            <sys_updated_on>2020-05-01 14:53:48</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>

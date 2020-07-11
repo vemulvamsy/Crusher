@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_db_view_table">
+    <sys_db_view_table action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <left_join>true</left_join>
+        <order>200</order>
+        <sys_class_name>sys_db_view_table</sys_class_name>
+        <sys_created_by>vemul.vamsy@gmail.com</sys_created_by>
+        <sys_created_on>2020-05-01 12:11:29</sys_created_on>
+        <sys_id>6f21d905072418102e76fea89c1ed083</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>x_67546_crusher_customer_payments</sys_name>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sys_db_view_table_6f21d905072418102e76fea89c1ed083</sys_update_name>
+        <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+        <sys_updated_on>2020-05-01 12:16:41</sys_updated_on>
+        <table>x_67546_crusher_customer_payments</table>
+        <variable_prefix>payments</variable_prefix>
+        <view display_value="x_67546_crusher_customer_sales_and_payments">a8c0dd05072418102e76fea89c1ed0db</view>
+        <where_clause>sales.customer_name == payments.customer</where_clause>
+    </sys_db_view_table>
+</record_update>

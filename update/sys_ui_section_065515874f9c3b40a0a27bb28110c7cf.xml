@@ -1,58 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="Total amounts" section_id="065515874f9c3b40a0a27bb28110c7cf" sys_domain="global" table="x_67546_crusher_customer" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>total_sales_amount</element>
+            <element>total_gst_amount</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 14:57:44</sys_created_on>
-            <sys_id>535555874f9c3b40a0a27bb28110c7ec</sys_id>
+            <sys_created_on>2020-07-11 07:22:15</sys_created_on>
+            <sys_id>62487d3f077110d02e76fea89c1ed070</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Total amounts" display_value="Total amounts" name="x_67546_crusher_customer" sys_domain="global" view="Default view">065515874f9c3b40a0a27bb28110c7cf</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 14:57:44</sys_updated_on>
+            <sys_updated_on>2020-07-11 07:22:15</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>due_amount</element>
+            <element>total_sales_without_batha</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 14:57:44</sys_created_on>
-            <sys_id>d35555874f9c3b40a0a27bb28110c7ec</sys_id>
+            <sys_created_on>2020-07-11 07:22:15</sys_created_on>
+            <sys_id>e2487d3f077110d02e76fea89c1ed070</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Total amounts" display_value="Total amounts" name="x_67546_crusher_customer" sys_domain="global" view="Default view">065515874f9c3b40a0a27bb28110c7cf</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 14:57:44</sys_updated_on>
+            <sys_updated_on>2020-07-11 07:22:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>total_sales_with_gst</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-07-11 07:22:15</sys_created_on>
+            <sys_id>66487d3f077110d02e76fea89c1ed070</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Total amounts" display_value="Total amounts" name="x_67546_crusher_customer" sys_domain="global" view="Default view">065515874f9c3b40a0a27bb28110c7cf</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-07-11 07:22:15</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.split</element>
-            <position>2</position>
+            <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 14:57:44</sys_created_on>
-            <sys_id>575555874f9c3b40a0a27bb28110c7ec</sys_id>
+            <sys_created_on>2020-07-11 07:22:15</sys_created_on>
+            <sys_id>e6487d3f077110d02e76fea89c1ed070</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Total amounts" display_value="Total amounts" name="x_67546_crusher_customer" sys_domain="global" view="Default view">065515874f9c3b40a0a27bb28110c7cf</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 14:57:44</sys_updated_on>
+            <sys_updated_on>2020-07-11 07:22:15</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>total_payments</element>
-            <position>3</position>
+            <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 14:57:44</sys_created_on>
-            <sys_id>d75555874f9c3b40a0a27bb28110c7ec</sys_id>
+            <sys_created_on>2020-07-11 07:22:15</sys_created_on>
+            <sys_id>6a487d3f077110d02e76fea89c1ed070</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Total amounts" display_value="Total amounts" name="x_67546_crusher_customer" sys_domain="global" view="Default view">065515874f9c3b40a0a27bb28110c7cf</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 14:57:44</sys_updated_on>
+            <sys_updated_on>2020-07-11 07:22:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>total_due_without_batha</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-07-11 07:22:15</sys_created_on>
+            <sys_id>ea487d3f077110d02e76fea89c1ed070</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Total amounts" display_value="Total amounts" name="x_67546_crusher_customer" sys_domain="global" view="Default view">065515874f9c3b40a0a27bb28110c7cf</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-07-11 07:22:15</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>total_due_with_gst_and_without_batha</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-07-11 07:22:15</sys_created_on>
+            <sys_id>6e487d3f077110d02e76fea89c1ed070</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Total amounts" display_value="Total amounts" name="x_67546_crusher_customer" sys_domain="global" view="Default view">065515874f9c3b40a0a27bb28110c7cf</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-07-11 07:22:15</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

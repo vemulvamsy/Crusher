@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[showDatePicker();
+function showDatePicker(){
+	var cbox = gel("need_date_range").checked;
+	var dpick = gel("date_pick");
+	if (cbox) {
+		dpick.style.display = "block";
+	} else {
+		dpick.style.display = "none";
+	}
+}
+function getCustomerData() {
+	//Type appropriate comment here, and begin script below
+	//var respObj = addSelection();
+
+	//function addSelection(){
+	//var custSysId = gel('customer_name').value;
+	//var cbox = gel("need_date_range").checked;
+	var from_date = gel("from_date").value.split(" ")[0];
+	var to_date = gel("to_date").value.split(" ")[0];
+	console.log("from_date: "+from_date);
+		console.log("to_date: "+to_date);
+	//var fd = gel("from_date").value.split(" ")[0].split('-');
+	//var td = gel("to_date").value.split(" ")[0].split('-');
+	// 	var fd = gel("from_date").value;
+	// 	alert(fd.split(" ")[0]);
+	// 	alert(fd.getDate());
+	// 		//'06-01-2019';
+	// 		from_date = fd[2]+"-"+fd[0]+"-"+fd[1];
+	// 		to_date = td[2]+"-"+td[0]+"-"+td[1];
+
+
+	var ga = new GlideAjax('CrusherUtilAjax');
+	ga.addParam('sysparm_name','getAllCustomersData');
+	ga.addParam('sysparm_from_date',from_date);
+	ga.addParam('sysparm_to_date',to_date);
+	ga.getXML(getResponseObj);
+
+	//var obj={cust_name:'',email_id:'',mobile:'',company:'',address:''};
+}
+function getResponseObj(response){
+	var resp = response.responseXML.documentElement.getAttribute("answer");
+	console.log(resp);
+	var custTable = gel("data");
+	var totSales = 0;
+	var totPaymetns = 0;
+	var totDues = 0;
+	custTable.innerHTML = "";
+	if(resp != ""){
+		var respObj = JSON.parse(resp);
+		var sno = 1;
+		for(var i=0; i < respObj.length; i++){
+			var row = custTable.insertRow();
+			var cell0 = row.insertCell();
+			cell0.textContent = sno++;
+			var cell1 = row.insertCell();
+			cell1.textContent = respObj[i].custName;
+			var cell2 = row.insertCell();
+			cell2.textContent = respObj[i].sales;
+			var cell3 = row.insertCell();
+			cell3.textContent = respObj[i].payments;
+			var cell4 = row.insertCell();
+			cell4.textContent = respObj[i].due;
+			
+			totSales += parseFloat(respObj[i].sales);
+			totPaymetns += parseFloat(respObj[i].payments);
+			totDues += parseFloat(respObj[i].due);
+		}
+		var row1 = custTable.insertRow();
+			var cell01 = row1.insertCell();
+			cell01.textContent = '';
+			var cell11 = row1.insertCell();
+			cell11.innerHTML = "<h4>Grand Total</h4>";
+			var cell21 = row1.insertCell();
+			cell21.innerHTML = "<h4>"+totSales+"</h4>";
+			var cell31 = row1.insertCell();
+			cell31.innerHTML = "<h4>"+totPaymetns+"</h4>";
+			var cell41 = row1.insertCell();
+			cell41.innerHTML = "<h4>"+totDues+"</h4>";
+		
+	}
+}
+]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_67546_crusher_all_customers_sales_payments.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<style> 
+		
+		@media print { 
+			.noprint { 
+				display: none; 
+			} 
+		} 
+	</style> 
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Arjun Crushers</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4"><h2 class="text-center text-underline"><u>All Customers Sales Vs Payments Report</u></h2></div>
+			<div class="col-sm-4"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8 noprint">
+				<form>
+					
+					
+					<div class="form-group row" id="date_pick">
+						<label for="customer_name" class="col-sm-3 col-form-label text-right">Select Date Range</label>
+						<div class="col-sm-7">
+							from : <g:ui_date_time class="date-picker form-control" name="from_date" table='x_67546_crusher_customer' field='date' id="from_date"/>  to : <g:ui_date_time class="date-picker form-control" name="to_date" table='x_67546_crusher_customer' field='date' id="to_date" />
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-sm-12"><center>
+							<input type="button" class="btn btn-default" value="Get Details"  onclick="getCustomerData()"/></center>
+						</div>
+
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h3><u>Customer Details</u></h3>
+				<table class="table" id="details">
+					<thead>
+						<tr class="info">
+							<th scope="col">S. No.</th>
+							<th scope="col">Customer Name</th>
+							<th scope="col">Total Sales Amount</th>
+							<th scope="col">Total Payments Amount</th>
+							<th scope="col">Total Due Amount</th>
+						</tr>
+					</thead>
+					<tbody id="data">
+					</tbody>
+				</table>
+				
+			</div>
+		</div>
+	</div>
+
+
+</j:jelly>]]></html>
+        <name>all_customers_sales_payments</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>vemul.vamsy@gmail.com</sys_created_by>
+        <sys_created_on>2020-05-01 12:20:31</sys_created_on>
+        <sys_id>d3a399c5072418102e76fea89c1ed0df</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>all_customers_sales_payments</sys_name>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sys_ui_page_d3a399c5072418102e76fea89c1ed0df</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-16 15:32:38</sys_updated_on>
+    </sys_ui_page>
+</record_update>

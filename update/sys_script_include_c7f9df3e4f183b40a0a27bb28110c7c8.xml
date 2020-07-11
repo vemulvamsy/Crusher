@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
     <sys_script_include action="INSERT_OR_UPDATE">
-        <access>package_private</access>
+        <access>public</access>
         <active>true</active>
         <api_name>x_67546_crusher.CrusherUtilAjax</api_name>
         <caller_access/>
@@ -12,8 +12,10 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 
 	getCustomerData : function(){
 		var custSysId = this.getParameter('sysparm_custSysId');
-		var from_date = this.getParameter('sysparm_from_date');
-		var to_date = this.getParameter('sysparm_to_date');
+		var from_date_str = this.getParameter('sysparm_from_date');
+		var to_date_str = this.getParameter('sysparm_to_date');
+		var from_date = new GlideDateTime(from_date_str);
+		var to_date = new GlideDateTime(to_date_str);
 		gs.info("vamshi: "+custSysId); //dateBETWEENjavascript:gs.dateGenerate('2019-06-01','start')@javascript:gs.dateGenerate('2019-06-23','end')
 		var item_types = this.getAvailableSalesTypeforCustomer(custSysId,from_date,to_date);
 		gs.info("vamshi item_types: "+item_types.join(','));
@@ -23,16 +25,16 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		var custDets = this.getCustomerDetails(custSysId);
 		var salesDets = this.getSales(custSysId,from_date,to_date);
 		var paymentsDets = this.getPayments(custSysId,from_date,to_date);
-		
+
 		return JSON.stringify(custSales)+"<split>"+JSON.stringify(payments)+"<split>"+JSON.stringify(custDets)+"<split>"+JSON.stringify(salesDets)+"<split>"+JSON.stringify(paymentsDets);
-		
+
 		//return JSON.stringify(custSales)+"<split>"+JSON.stringify(payments)+"<split>"+JSON.stringify(custDets);
 	},
 	getCustomerDetails : function(custSysId){
 		var obj={cust_name:'',email_id:'',mobile:'',company:'',address:''};
 		var grc = new GlideRecord('x_67546_crusher_customer');
 		if(grc.get(custSysId)){
-			
+
 			obj.cust_name = grc.name+'';
 			obj.email_id = grc.email_id+'';
 			obj.mobile = grc.mobile_number+'';
@@ -116,10 +118,10 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 			res.push(obj);
 		}
 		res.push({'mode_of_payment':'Total amount','amt':total});
-		
+
 		return res;
 	},
-	
+
 	getSales : function(custSysId,from_date,to_date){
 		gs.info("vamshi crusher inside getSales");
 		var sales = [];
@@ -171,19 +173,86 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		return payments;
 	},
 
+	getSalesObjOfGivenDateRange : function(fromDate,toDate){
+		gs.info("vamshi sales from date: "+fromDate+" todate: "+toDate);
+		var objSales = {};
+		var gr = new GlideAggregate('x_67546_crusher_sales');
+		gr.addEncodedQuery("dateBETWEENjavascript:gs.dateGenerate('"+fromDate+"','start')@javascript:gs.dateGenerate('"+toDate+"','end')");
+		gr.groupBy('customer_name');
+		gr.addAggregate('SUM','total_without_batha');
+		gr.query();
+		while(gr.next()){
+			var sum = gr.getAggregate('SUM','total_without_batha');
+			objSales[String(gr.customer_name)] = sum;
+		}
+		gs.info("vamshi sales1: "+JSON.stringify(objSales));
+		return objSales;
+	},
+	getPaymentsObjOfGivenDateRange : function(fromDate,toDate){
+		gs.info("vamshi payments from date: "+fromDate+" todate: "+toDate);
+		var objPayments = {};
+		var grp = new GlideAggregate('x_67546_crusher_customer_payments');
+		grp.addEncodedQuery("dateBETWEENjavascript:gs.dateGenerate('"+fromDate+"','start')@javascript:gs.dateGenerate('"+toDate+"','end')");
+		grp.groupBy('customer');
+		grp.addAggregate('SUM','amount');
+		grp.query();
+		while(grp.next()){
+			var sum = grp.getAggregate('SUM','amount');
+			objPayments[grp.customer] = sum;
+		}
+		gs.info("vamshi payments1: "+JSON.stringify(objPayments));
+		return objPayments;
+	},
+	getAllCustomerNames : function(){
+		var objCust = {};
+		var grc = new GlideRecord('x_67546_crusher_customer');
+		grc.orderBy('name');
+		grc.query();
+		while(grc.next()){
+			objCust[String(grc.sys_id)] = String(grc.name);
+		}
+		return objCust;
+	},
+	getAllCustomersData : function(){
+		var finalData = [];
+		var from_date = this.getParameter('sysparm_from_date');
+		var to_date = this.getParameter('sysparm_to_date');
+		gs.info("vamshi all from date: "+from_date+" todate: "+to_date);
+		var customer = this.getAllCustomerNames();
+		var sales = this.getSalesObjOfGivenDateRange(from_date,to_date);
+		var payments = this.getPaymentsObjOfGivenDateRange(from_date,to_date);
+		gs.info("vamshi sales: "+JSON.stringify(sales));
+		gs.info("vamshi payments: "+JSON.stringify(payments));
+		for(var key in customer){
+			var finalObj = {};
+			var totsales = sales.hasOwnProperty(key) ? sales[key] : 0;
+			var totpayments = payments.hasOwnProperty(key) ? payments[key] : 0;
+			finalObj.cust = key;
+			finalObj.custName = customer[key];
+			finalObj.sales = totsales;
+			finalObj.payments = totpayments;
+			finalObj.due = parseFloat(totsales) - parseFloat(totpayments);
+			finalData.push(finalObj);
+		}
+		if(finalData.length > 0){
+			return JSON.stringify(finalData);
+		}
+		return "";
+	},
+
 	type: 'CrusherUtilAjax'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-03-24 05:58:51</sys_created_on>
         <sys_id>c7f9df3e4f183b40a0a27bb28110c7c8</sys_id>
-        <sys_mod_count>29</sys_mod_count>
+        <sys_mod_count>41</sys_mod_count>
         <sys_name>CrusherUtilAjax</sys_name>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sys_script_include_c7f9df3e4f183b40a0a27bb28110c7c8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2019-06-24 17:20:56</sys_updated_on>
+        <sys_updated_on>2020-07-11 13:51:51</sys_updated_on>
     </sys_script_include>
 </record_update>

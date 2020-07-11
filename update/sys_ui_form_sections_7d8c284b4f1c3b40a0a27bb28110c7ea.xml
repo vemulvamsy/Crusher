@@ -42,6 +42,20 @@
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2019-03-24 14:57:39</sys_updated_on>
         </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>vemul.vamsy@gmail.com</sys_created_by>
+            <sys_created_on>2020-04-20 14:37:01</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f369096907dc10d42e76fea89c1ed0d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_67546_crusher_customer" name="x_67546_crusher_customer" sys_domain="global" view="Default view">7d8c284b4f1c3b40a0a27bb28110c7ea</sys_ui_form>
+            <sys_ui_section caption="Totals with Batha" display_value="Totals with Batha" name="x_67546_crusher_customer" sys_domain="global" view="Default view">2369096907dc10d42e76fea89c1ed0d2</sys_ui_section>
+            <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+            <sys_updated_on>2020-04-20 14:37:01</sys_updated_on>
+        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_67546_crusher_customer</name>
             <roles/>

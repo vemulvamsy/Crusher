@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Expenditure" max_length="40" name="x_67546_crusher_expenditure" sizeclass="0" type="collection">
+    <element label="Expenditure" max_length="40" name="x_67546_crusher_expenditure" sizeclass="584" type="collection">
         <element label="Amount" mandatory="true" max_length="20" name="amount" type="decimal"/>
         <element label="Date" mandatory="true" max_length="40" name="date" type="glide_date"/>
         <element label="Employee" mandatory="true" max_length="32" name="employee" reference="x_67546_crusher_employees" type="reference"/>
         <element label="Expenditure type" mandatory="true" max_length="32" name="expenditure_type" reference="x_67546_crusher_expenditure_type" type="reference"/>
         <element label="Other type" max_length="200" name="other_type" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Remarks" max_length="1000" name="remarks" type="string"/>
         <element display="true" label="Voucher number" mandatory="true" max_length="50" name="voucher_number" type="string"/>
         <index name="index">
             <element name="employee"/>

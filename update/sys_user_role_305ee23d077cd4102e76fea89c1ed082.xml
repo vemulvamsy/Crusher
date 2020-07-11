@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <encryption_context/>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_67546_crusher.crusher_admin</name>
+        <requires_subscription>-1</requires_subscription>
+        <scoped_admin>false</scoped_admin>
+        <suffix>crusher_admin</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>vemul.vamsy@gmail.com</sys_created_by>
+        <sys_created_on>2020-05-16 13:08:31</sys_created_on>
+        <sys_id>305ee23d077cd4102e76fea89c1ed082</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_67546_crusher.crusher_admin</sys_name>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sys_user_role_305ee23d077cd4102e76fea89c1ed082</sys_update_name>
+        <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+        <sys_updated_on>2020-05-16 13:08:31</sys_updated_on>
+    </sys_user_role>
+</record_update>

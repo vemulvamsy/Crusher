@@ -40,18 +40,29 @@
 		total += parseFloat(grc.total_bill);
 		total_wo_batha += parseFloat(grc.total_without_batha);
 	}
-	
+
 	var grcust = new GlideRecord('x_67546_crusher_customer');
 	if(grcust.get(current.customer_name)){
+		var total_gst_amount = gs.nil(String(grcust.total_gst_amount)) ? 0 : parseFloat(grcust.total_gst_amount);
 		var payments = grcust.total_payments;
+
 		grcust.total_sales_amount = total;
 		grcust.total_sales_without_batha = total_wo_batha;
-		grcust.due_amount = total - parseFloat(payments);
-		grcust.total_due_without_batha = total_wo_batha - parseFloat(payments);
+		
+		
+		grcust.total_sales_with_gst_and_with_batha = total + total_gst_amount;
+		grcust.total_sales_with_gst = total_wo_batha + total_gst_amount; //without batha
+		
+		grcust.total_due_with_gst_and_without_batha = (total_wo_batha + total_gst_amount) - parseFloat(payments);
+		grcust.total_due_with_gst_and_with_batha = (total + total_gst_amount) - parseFloat(payments);
+		
+		grcust.due_amount = (total) - parseFloat(payments);
+		grcust.total_due_without_batha = (total_wo_batha) - parseFloat(payments);
+		
 		grcust.update();
 	}
-	
-	
+
+
 	//old customer updation
 	gs.info("vamshi custo: "+previous.customer_name);
 	var totalp = 0;
@@ -63,14 +74,24 @@
 		totalp += parseFloat(grcp.total_bill);
 		totalp_wo_batha += parseFloat(grcp.total_without_batha);
 	}
-	
+
 	var grcustp = new GlideRecord('x_67546_crusher_customer');
 	if(grcustp.get(previous.customer_name)){
+		var total_gst_amounto = gs.nil(String(grcust.total_gst_amount)) ? 0 : parseFloat(grcust.total_gst_amount);
 		var paymentso = grcustp.total_payments;
+		
 		grcustp.total_sales_amount = totalp;
 		grcustp.total_sales_without_batha = totalp_wo_batha;
-		grcustp.due_amount = totalp - parseFloat(paymentso);
-		grcustp.total_due_without_batha = totalp_wo_batha - parseFloat(paymentso);
+		
+		grcustp.total_sales_with_gst_and_with_batha = totalp + total_gst_amounto;
+		grcustp.total_sales_with_gst = totalp_wo_batha + total_gst_amounto; //without batha
+		
+		grcustp.total_due_with_gst_and_without_batha = (totalp_wo_batha + total_gst_amounto) - parseFloat(paymentso);
+		grcustp.total_due_with_gst_and_with_batha = (totalp + total_gst_amounto) - parseFloat(paymentso);
+		
+		grcustp.due_amount = (totalp) - parseFloat(paymentso);
+		grcustp.total_due_without_batha = (totalp_wo_batha) - parseFloat(paymentso);
+		
 		grcustp.update();
 	}
 
@@ -81,7 +102,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>6bd9c6394f34c410a0a27bb28110c7d4</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>update totals of cust on chg of sales</sys_name>
         <sys_overrides/>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
@@ -89,7 +110,7 @@
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sys_script_6bd9c6394f34c410a0a27bb28110c7d4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-02-28 19:04:22</sys_updated_on>
+        <sys_updated_on>2020-07-11 08:14:24</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

@@ -95,6 +95,101 @@
             <sys_updated_on>2019-03-24 06:27:05</sys_updated_on>
             <value>Cheque</value>
         </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>mode_of_payment</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>OD17</label>
+            <language>en</language>
+            <name>x_67546_crusher_customer_payments</name>
+            <sequence>5</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-07-08 06:57:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>aab51a72077598902e76fea89c1ed0ed</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-07-08 06:59:04</sys_updated_on>
+            <value>OD17</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>mode_of_payment</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Counter Cash</label>
+            <language>en</language>
+            <name>x_67546_crusher_customer_payments</name>
+            <sequence>6</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-07-08 06:57:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>66c5dabe073598902e76fea89c1ed0ad</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-07-08 06:59:53</sys_updated_on>
+            <value>Counter Cash</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>mode_of_payment</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Google Pay 474</label>
+            <language>en</language>
+            <name>x_67546_crusher_customer_payments</name>
+            <sequence>7</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-07-08 06:58:19</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4df55e72077598902e76fea89c1ed044</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-07-08 06:59:56</sys_updated_on>
+            <value>Google Pay 474</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>mode_of_payment</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Direct Transfer</label>
+            <language>en</language>
+            <name>x_67546_crusher_customer_payments</name>
+            <sequence>8</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-07-08 06:58:42</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>2a0656b2077598902e76fea89c1ed099</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-07-08 07:00:02</sys_updated_on>
+            <value>Direct Transfer</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>mode_of_payment</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Other Adjustments</label>
+            <language>en</language>
+            <name>x_67546_crusher_customer_payments</name>
+            <sequence>9</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-07-08 06:59:35</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>2826d2b2077598902e76fea89c1ed088</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-07-08 07:00:13</sys_updated_on>
+            <value>Other Adjustments</value>
+        </sys_choice>
         <sys_choice_set action="INSERT_OR_UPDATE">
             <element>mode_of_payment</element>
             <name>x_67546_crusher_customer_payments</name>

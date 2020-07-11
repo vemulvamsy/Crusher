@@ -4,13 +4,13 @@
             <element>name</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 14:57:43</sys_created_on>
-            <sys_id>8f5555874f9c3b40a0a27bb28110c7ad</sys_id>
+            <sys_created_on>2020-07-11 07:22:13</sys_created_on>
+            <sys_id>b1487d3f077110d02e76fea89c1ed026</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer" sys_domain="global" view="Default view">fe012c3a4f103b40a0a27bb28110c78b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 14:57:43</sys_updated_on>
+            <sys_updated_on>2020-07-11 07:22:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>company</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 14:57:43</sys_created_on>
-            <sys_id>035555874f9c3b40a0a27bb28110c7ae</sys_id>
+            <sys_created_on>2020-07-11 07:22:13</sys_created_on>
+            <sys_id>39487d3f077110d02e76fea89c1ed026</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer" sys_domain="global" view="Default view">fe012c3a4f103b40a0a27bb28110c78b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 14:57:43</sys_updated_on>
+            <sys_updated_on>2020-07-11 07:22:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -32,13 +32,13 @@
             <element>.split</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 14:57:43</sys_created_on>
-            <sys_id>835555874f9c3b40a0a27bb28110c7ae</sys_id>
+            <sys_created_on>2020-07-11 07:22:13</sys_created_on>
+            <sys_id>b9487d3f077110d02e76fea89c1ed026</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer" sys_domain="global" view="Default view">fe012c3a4f103b40a0a27bb28110c78b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 14:57:43</sys_updated_on>
+            <sys_updated_on>2020-07-11 07:22:13</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -46,13 +46,13 @@
             <element>email_id</element>
             <position>3</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 14:57:43</sys_created_on>
-            <sys_id>075555874f9c3b40a0a27bb28110c7ae</sys_id>
+            <sys_created_on>2020-07-11 07:22:13</sys_created_on>
+            <sys_id>3d487d3f077110d02e76fea89c1ed026</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer" sys_domain="global" view="Default view">fe012c3a4f103b40a0a27bb28110c78b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 14:57:43</sys_updated_on>
+            <sys_updated_on>2020-07-11 07:22:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -60,41 +60,13 @@
             <element>mobile_number</element>
             <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2019-03-24 14:57:43</sys_created_on>
-            <sys_id>875555874f9c3b40a0a27bb28110c7ae</sys_id>
+            <sys_created_on>2020-07-11 07:22:13</sys_created_on>
+            <sys_id>bd487d3f077110d02e76fea89c1ed026</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer" sys_domain="global" view="Default view">fe012c3a4f103b40a0a27bb28110c78b</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2019-03-24 14:57:43</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>total_sales_without_batha</element>
-            <position>5</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-02-28 18:02:01</sys_created_on>
-            <sys_id>6ba58ef0079bcc102e76fea89c1ed073</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer" sys_domain="global" view="Default view">fe012c3a4f103b40a0a27bb28110c78b</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-02-28 18:02:01</sys_updated_on>
-            <sys_user/>
-            <type/>
-        </sys_ui_element>
-        <sys_ui_element action="INSERT_OR_UPDATE">
-            <element>total_due_without_batha</element>
-            <position>6</position>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-02-28 18:02:04</sys_created_on>
-            <sys_id>dcb54af4079bcc102e76fea89c1ed0aa</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_ui_formatter/>
-            <sys_ui_section caption="NULL" display_value="" name="x_67546_crusher_customer" sys_domain="global" view="Default view">fe012c3a4f103b40a0a27bb28110c78b</sys_ui_section>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-02-28 18:02:04</sys_updated_on>
+            <sys_updated_on>2020-07-11 07:22:13</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
