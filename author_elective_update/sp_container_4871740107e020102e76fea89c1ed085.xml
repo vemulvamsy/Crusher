@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container">
+    <sp_container action="DELETE">
+        <background_color/>
+        <background_image/>
+        <background_style>default</background_style>
+        <bootstrap_alt>false</bootstrap_alt>
+        <class_name/>
+        <container_class_name/>
+        <name>ReportTesting - Container 1</name>
+        <order>1</order>
+        <sp_page display_value="report_test">df31bc4107e020102e76fea89c1ed000</sp_page>
+        <subheader>false</subheader>
+        <sys_class_name>sp_container</sys_class_name>
+        <sys_created_by>vemul.vamsy@gmail.com</sys_created_by>
+        <sys_created_on>2020-11-16 06:02:05</sys_created_on>
+        <sys_id>4871740107e020102e76fea89c1ed085</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ReportTesting - Container 1</sys_name>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sp_container_4871740107e020102e76fea89c1ed085</sys_update_name>
+        <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+        <sys_updated_on>2020-11-16 06:02:05</sys_updated_on>
+        <title/>
+        <width>container</width>
+    </sp_container>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</application>
+        <file_path/>
+        <instance_id>b6999bce9b5dcf8469346b8af359ff91</instance_id>
+        <instance_name>dev45255</instance_name>
+        <name>sp_container_4871740107e020102e76fea89c1ed085</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_container"><sp_container action="INSERT_OR_UPDATE"><background_color/><background_image/><background_style>default</background_style><bootstrap_alt>false</bootstrap_alt><class_name/><container_class_name/><name>ReportTesting - Container 1</name><order>1</order><sp_page display_value="report_test">df31bc4107e020102e76fea89c1ed000</sp_page><subheader>false</subheader><sys_class_name>sp_container</sys_class_name><sys_created_by>vemul.vamsy@gmail.com</sys_created_by><sys_created_on>2020-11-16 06:02:05</sys_created_on><sys_id>4871740107e020102e76fea89c1ed085</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ReportTesting - Container 1</sys_name><sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package><sys_policy/><sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope><sys_update_name>sp_container_4871740107e020102e76fea89c1ed085</sys_update_name><sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by><sys_updated_on>2020-11-16 06:02:05</sys_updated_on><title/><width>container</width></sp_container></record_update>]]></payload>
+        <payload_hash>1162411729</payload_hash>
+        <record_name>ReportTesting - Container 1</record_name>
+        <reverted_from/>
+        <source>d45641e107dc10d42e76fea89c1ed0fd</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>vemul.vamsy@gmail.com</sys_created_by>
+        <sys_created_on>2020-11-16 06:02:05</sys_created_on>
+        <sys_id>c071740107e020102e76fea89c1ed087</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>175cfa567f10000001</sys_recorded_at>
+        <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+        <sys_updated_on>2020-11-16 06:02:05</sys_updated_on>
+        <type>Container</type>
+        <update_guid>c8717401d2e0201028f0efde10461d86</update_guid>
+        <update_guid_history>c8717401d2e0201028f0efde10461d86:1162411729</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Record deleted 2020-11-16 01:02:10">9d71f08107e020102e76fea89c1ed0bb</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>vemul.vamsy@gmail.com</sys_created_by>
+        <sys_created_on>2020-11-16 06:02:10</sys_created_on>
+        <sys_db_object display_value="" name="sp_container">sp_container</sys_db_object>
+        <sys_id>8378218d1d754b67acf801fde2b55aa9</sys_id>
+        <sys_metadata>4871740107e020102e76fea89c1ed085</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ReportTesting - Container 1</sys_name>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_scope_delete display_value="">025b6720b1b645f1817f7eb1eb4ee6a1</sys_scope_delete>
+        <sys_update_name>sp_container_4871740107e020102e76fea89c1ed085</sys_update_name>
+        <sys_update_version display_value="sp_container_4871740107e020102e76fea89c1ed085">c071740107e020102e76fea89c1ed087</sys_update_version>
+        <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+        <sys_updated_on>2020-11-16 06:02:10</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[var app = angular.module("angularApp",['ui.bootstrap']);
+ app.controller('MainController', ['$scope', function($scope) {
+	 //$scope.greeting = "Hello from Angular!";
+	// $scope.pageSize = 2;
+    // $scope.searchText.state = 'Requested';
+	 getDetails(); 
+	 function getDetails(){
+		 var ga = new GlideAjax('CrusherUtilAjax');
+		 ga.addParam('sysparm_name','getTravelObjectForPopup');
+		 ga.getXMLWait();
+		 var pid_result = ga.getAnswer();
+		 var pid_res = pid_result.evalJSON();
+		 console.log(JSON.stringify(pid_res));
+		 $scope.rows_list = pid_res;
+		 //return resp.evalJSON();
+		 //$scope.totalItems = $scope.rows_list.length;
+	 }
+	
+	   $scope.data = $scope.rows_list;
+  $scope.viewby = 3;
+  $scope.totalItems = $scope.data.length;
+  $scope.currentPage = 4;
+  $scope.itemsPerPage = $scope.viewby;
+  $scope.maxSize = 5; //Number of pager buttons to show
+
+  $scope.setPage = function (pageNo) {
+    $scope.currentPage = pageNo;
+  };
+
+  $scope.pageChanged = function() {
+    console.log('Page changed to: ' + $scope.currentPage);
+  };
+
+$scope.setItemsPerPage = function(num) {
+  $scope.itemsPerPage = num;
+  $scope.currentPage = 1; //reset to first page
+};
+	 
+	 $scope.approve = function(row){
+		 var gaa = new GlideAjax('TravelApplicationUIPage');
+		gaa.addParam('sysparm_name','approveRequest');
+		gaa.addParam('sys_id',row.sys_id);
+		gaa.getXMLWait();
+		var ans = gaa.getAnswer();
+		row.state = 'Approved'; 
+		
+	 };
+	 $scope.reject = function(row){
+		 var gaa = new GlideAjax('TravelApplicationUIPage');
+		gaa.addParam('sysparm_name','rejectRequest');
+		gaa.addParam('sys_id',row.sys_id);
+		gaa.getXMLWait();
+		var ans = gaa.getAnswer();
+		row.state = 'Rejected';
+	 };
+	 $scope.sortColumn = "state";
+	 $scope.reverseSort = false;
+	 $scope.sortData = function(column){
+		$scope.reverseSort = ($scope.sortColumn == column) ? !$scope.reverseSort : false;
+		$scope.sortColumn = column; 
+	 };
+	 $scope.getSortClass = function(column){
+		 if($scope.sortColumn == column){
+			 return $scope.reverseSort ? 'arrow-down' : 'arrow-up';
+		 }
+		 return '';
+	 };
+	 $scope.searchBoxes = 'hideBoxes';
+	 $scope.showHideSearchBoxes = function(){
+		 $scope.searchBoxes = $scope.searchBoxes == 'hideBoxes' ? 'showBoxes' : 'hideBoxes';
+	 };
+	 $scope.getBoxesClass = function(){
+		 return $scope.searchBoxes;
+	 };
+	
+	$scope.checkState = function(state){
+		//alert(state);
+		return state == 'Requested' ? false : true;
+	};
+	$scope.getApprover = function(){
+		return g_user.getFullName();
+	}; 
+	$scope.openRecord = function(table,sys_id) {
+		g_navigation.openPopup('https://dev45255.service-now.com/'+table+'.do?sys_id='+sys_id, true);
+	}; 
+	 
+ }]);
+]]></client_script>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_67546_crusher_Testing angular datatable.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>  
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">  
+
+ <html>
+	 <head>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+	  <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+	  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+	</head>
+	 <style>
+		 .arrow-up{
+			 width:0;
+			 height:0;
+			 border-left:5px solid transparent;
+			 border-right:5px solid transparent;
+			 border-bottom:10px solid black;
+			 display:inline-block;
+			 margin-left:10px;
+		 }
+		 .arrow-down{
+			 width:0;
+			 height:0;
+			 border-left:5px solid transparent;
+			 border-right:5px solid transparent;
+			 border-top:10px solid black;
+			 display:inline-block;
+			 margin-left:10px;
+		 }
+		 .showBoxes{
+			 display: table-row;
+		 }
+		 .hideBoxes{
+			 display:none;
+		 }
+		 th, .pointer{
+			 cursor:pointer;
+		 }
+	 </style>
+	 <body ng-app="angularApp">
+		 <div class="ng-cloak">
+               <div ng-controller="MainController">
+				   <nav class="navbar navbar-default">
+					  <div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+						  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						  </button>
+						  <a class="navbar-brand" href="#" style="color:#000;">Approvals</a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						  
+						  <form class="navbar-form navbar-left">
+							<div class="form-group">
+								<label for="search"> Search: </label>
+								<input type="text" class="form-control" id="search" placeholder="Search Here..." />
+							  </div>
+						  </form>
+						  <ul class="nav navbar-nav navbar-right">
+							<li>
+								<form class="navbar-form navbar-left">
+								<div class="form-group">
+								  <div class="form-group">
+									<label for="rows_per_page">Rows per Page: </label>
+									<select id="rows_per_page" class="form-control" ng-model="viewby" ng-change="setItemsPerPage(viewby)">
+										<option value="2">2</option>
+										<option value="5">5</option>
+										<option value="10">10</option>
+										<option value="15">15</option>
+										<option value="20">20</option>
+									  </select>
+								  </div>
+								</div>
+								</form>	
+							</li>
+							<li>
+									<p class="navbar-text navbar-right" style="color:#000;font-weight:bold;">Total Records: {{totalItems}}</p>
+							</li>
+						  </ul>
+							
+						</div><!-- /.navbar-collapse -->
+					  </div><!-- /.container-fluid -->
+					</nav>
+                  
+				   
+				   <ol class="breadcrumb" style="background:#fff;">
+					  <li><a href="#">All</a></li>
+					  <li><a href="#">source_table=x_168180_travel_re_travel_request_application_table</a></li>
+					   <li><a href="#">approver is {{getApprover()}}</a></li>
+					</ol>
+				   
+				   <table id="myTable2"  style="width:100%" class="table">	
+						<tr class="active">
+							<th><span class='glyphicon glyphicon-search pointer' ng-click="showHideSearchBoxes()"></span></th>
+							<th ng-click="sortData('approver')">Approver <div ng-class="getSortClass('approver')"></div></th>
+							<th ng-click="sortData('state')">State <div ng-class="getSortClass('state')"></div></th>
+							<th ng-click="sortData('sysapproval')">Approval for <div ng-class="getSortClass('sysapproval')"></div></th>
+							<th ng-click="sortData('tot_amt')">Total Amount <div ng-class="getSortClass('tot_amt')"></div></th>
+							<th>Approve</th>
+							<th>Reject</th>
+						</tr>
+					   <tr  ng-class="getBoxesClass()">
+						   <td></td>
+						   <td><div><input type="text"  ng-model="searchText.approver" class="form-control" /></div></td>
+						   <td><div><input type="text"  ng-model="searchText.state" class="form-control" /></div></td>
+						   <td><div><input type="text"  ng-model="searchText.sysapproval" class="form-control" /></div></td>
+						   <td><div><input type="text"  ng-model="searchText.tot_amt" class="form-control" /></div></td>
+						   <td></td>
+						   <td></td>
+						   
+					   </tr>
+					   <tr ng-repeat="row_list in data.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))| orderBy:sortColumn:reverseSort | filter : searchText" >
+						   <td><span class='glyphicon glyphicon-info-sign pointer' ng-click="openRecord('sysapproval_approver',row_list.sys_id)"></span></td>
+						   <td>{{row_list.approver}}</td>
+						   <td>{{row_list.state}}</td>
+						   <td>{{row_list.sysapproval}}</td>
+						   <td>{{row_list.tot_amt}}</td>
+						   <td><button ng-disabled="checkState(row_list.state)" type='button' id='approve'  class='btn btn-default' ng-click = "approve(row_list)" ><span class='glyphicon glyphicon-ok'></span></button></td>
+						   <td><button ng-disabled="checkState(row_list.state)" type='button' id='reject' class='btn btn-default' ng-click = "reject(row_list)" ><span class='glyphicon glyphicon-remove'></span></button></td>
+					   </tr>
+					</table> 
+               </div>
+		 </div>
+		 <div class="ng-cloak">
+			 <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages" items-per-page="itemsPerPage"></pagination>
+    <pre>Page: {{currentPage}} / {{numPages}}</pre>
+    	 </div>
+		 
+	 </body>
+	 
+ </html>
+</j:jelly>  ]]></html>
+        <name>Testing angular datatable</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-07-11 15:10:30</sys_created_on>
+        <sys_id>e352e3bf073d10d02e76fea89c1ed066</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Testing angular datatable</sys_name>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sys_ui_page_e352e3bf073d10d02e76fea89c1ed066</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-07-11 15:15:49</sys_updated_on>
+    </sys_ui_page>
+</record_update>

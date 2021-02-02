@@ -33,21 +33,61 @@
 
 	// Add your code here
 	//new customer
-	var total = 0.0;
+	var total_payments = 0.0;
 	var grs = new GlideAggregate(current.getTableName());
 	grs.addQuery('customer',current.customer);
 	grs.addAggregate('SUM','amount');
 	grs.query();
 	while(grs.next()){
-		total += parseFloat(grs.getAggregate('SUM','amount'));
+		total_payments += parseFloat(grs.getAggregate('SUM','amount')); //total payments
 	}
 	var grc = new GlideRecord('x_67546_crusher_customer');
 	if(grc.get(current.customer)){
-		var sales = grc.total_sales_amount;
-		var sales_wo_batha = grc.total_sales_without_batha;
-		grc.total_payments = total;
-		grc.due_amount = parseFloat(sales) - total;
-		grc.total_due_without_batha = parseFloat(sales_wo_batha) - total;
+		
+		grc.total_payments = total_payments;
+		
+		var tot_sales_wo_batha = parseFloat(grc.total_sales_without_batha);
+		grc.total_due_without_batha = tot_sales_wo_batha - total_payments;  //updating total due without batha
+		
+		var total_sales_with_gst = parseFloat(grc.total_sales_with_gst);
+		grc.total_due_with_gst_and_without_batha = total_sales_with_gst - total_payments; //updating total due with gst and withput batha
+		
+		var total_sales_amount = parseFloat(grc.total_sales_amount);
+		grc.due_amount = total_sales_amount - total_payments;
+		
+		var total_sales_with_gst_and_with_batha = parseFloat(grc.total_sales_with_gst_and_with_batha);
+		grc.total_due_with_gst_and_with_batha = total_sales_with_gst_and_with_batha - total_payments;
+
+		
+		
+		
+// 		var sales = grc.total_sales_amount;
+// 		var sales_wo_batha = grc.total_sales_without_batha;
+// 		grc.total_payments = total;
+		
+// 		var total_gst_amount = gs.nil(String(grc.total_gst_amount)) ? 0 : parseFloat(grc.total_gst_amount);
+		
+// 		grc.due_amount = parseFloat(sales) - total;
+// 		grc.total_due_without_batha = parseFloat(sales_wo_batha) - total;
+		
+// // 		grcust.total_sales_amount = total;
+// // 		grcust.total_sales_without_batha = total_wo_batha;
+		
+// // 		grcust.total_sales_amount = total;
+// // 		grcust.total_sales_without_batha = total_wo_batha;
+		
+		
+// // 		grc.total_sales_with_gst_and_with_batha = total + total_gst_amount;
+// // 		grc.total_sales_with_gst = total_wo_batha + total_gst_amount; //without batha
+// 		var total_wo_batha = '';
+// 		var total_gst_amount = '';
+// 		var payments = '';
+		
+// 		grc.total_due_with_gst_and_without_batha = (total_wo_batha + total_gst_amount) - parseFloat(payments);
+// 		grc.total_due_with_gst_and_with_batha = (total + total_gst_amount) - parseFloat(payments);
+		
+// 		grc.due_amount = (total) - parseFloat(payments);
+// 		grc.total_due_without_batha = (total_wo_batha) - parseFloat(payments);
 		grc.update();
 	}
 
@@ -62,11 +102,26 @@
 	}
 	var grcp = new GlideRecord('x_67546_crusher_customer');
 	if(grcp.get(previous.customer)){
-		var saleso = grcp.total_sales_amount;
-		var sales_wo_batha_so = grcp.total_sales_without_batha;
-		grcp.total_payments = totalp;
-		grcp.due_amount = parseFloat(saleso) - totalp;
-		grcp.total_due_without_batha = parseFloat(sales_wo_batha_so) - totalp;
+// 		var saleso = grcp.total_sales_amount;
+// 		var sales_wo_batha_so = grcp.total_sales_without_batha;
+// 		grcp.total_payments = totalp;
+// 		grcp.due_amount = parseFloat(saleso) - totalp;
+// 		grcp.total_due_without_batha = parseFloat(sales_wo_batha_so) - totalp;
+		grc.total_payments = totalp;
+		
+		var tot_sales_wo_batha_p = parseFloat(grc.total_sales_without_batha);
+		grc.total_due_without_batha = tot_sales_wo_batha_p - totalp;  //updating total due without batha
+		
+		var total_sales_with_gst_p = parseFloat(grc.total_sales_with_gst);
+		grc.total_due_with_gst_and_without_batha = total_sales_with_gst_p - totalp; //updating total due with gst and withput batha
+		
+		var total_sales_amount_p = parseFloat(grc.total_sales_amount);
+		grc.due_amount = total_sales_amount_p - totalp;
+		
+		var total_sales_with_gst_and_with_batha_p = parseFloat(grc.total_sales_with_gst_and_with_batha);
+		grc.total_due_with_gst_and_with_batha = total_sales_with_gst_and_with_batha_p - totalp;
+
+		
 		grcp.update();
 	}
 
@@ -78,15 +133,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>20aab30c4f523780a0a27bb28110c751</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_name>Update customer totals on chg of payment</sys_name>
         <sys_overrides/>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
         <sys_policy/>
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sys_script_20aab30c4f523780a0a27bb28110c751</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-02-28 18:56:22</sys_updated_on>
+        <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+        <sys_updated_on>2020-09-27 10:23:18</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

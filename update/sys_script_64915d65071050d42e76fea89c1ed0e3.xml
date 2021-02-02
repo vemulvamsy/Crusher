@@ -41,8 +41,18 @@
 		total += parseFloat(grc.total_bill);
 		total_wo_batha += parseFloat(grc.total_without_batha);
 	}
+	
+	var total_payments = 0.0;
+	var grs = new GlideAggregate("x_67546_crusher_customer_payments");
+	grs.addQuery('customer',current.sys_id);
+	grs.addAggregate('SUM','amount');
+	grs.query();
+	while(grs.next()){
+		total_payments += parseFloat(grs.getAggregate('SUM','amount')); //total payments
+	}
+	
 	var total_gst_amount = gs.nil(String(current.total_gst_amount)) ? 0 : parseFloat(current.total_gst_amount);
-	var payments = current.total_payments;
+	var payments = total_payments;
 
 	current.total_sales_amount = total;
 	current.total_sales_without_batha = total_wo_batha;
@@ -75,15 +85,15 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>64915d65071050d42e76fea89c1ed0e3</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>update sales when gst changes</sys_name>
         <sys_overrides/>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
         <sys_policy/>
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sys_script_64915d65071050d42e76fea89c1ed0e3</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-07-11 08:15:17</sys_updated_on>
+        <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+        <sys_updated_on>2020-09-27 11:06:27</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>

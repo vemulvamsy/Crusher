@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+	/* widget controller */
+	var c = this;
+	var my_dashboardMessageHandler = new DashboardMessageHandler("my_unique_id");
+
+	function publishFilter () {
+		var filter_message = {};
+		filter_message.id = "my_unique_id";
+		filter_message.table = "task";
+
+		
+			filter_message.filter = "assigned_toDYNAMIC90d1921e5f510100a9ad2572f2b477fe";
+		SNC.canvas.interactiveFilters.setDefaultValue({
+			id: filter_message.id,
+			filters: [filter_message]
+		}, false);
+		my_dashboardMessageHandler.publishFilter(filter_message.table, filter_message.filter);
+	}
+
+	function clearFilter() {
+		var filter_message = {};
+		filter_message.id = "my_unique_id";
+		filter_message.table = "task";
+		filter_message.filter = "";
+		SNC.canvas.interactiveFilters.setDefaultValue({
+			id: filter_message.id,
+			filters: [filter_message]
+		}, false);
+		my_dashboardMessageHandler.removeFilter();
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>incident_dynamic_filter</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) { 
+
+ }]]></link>
+        <name>IncidentDynamicFilter</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>vemul.vamsy@gmail.com</sys_created_by>
+        <sys_created_on>2020-11-16 06:06:55</sys_created_on>
+        <sys_id>904278c107e020102e76fea89c1ed0fb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>IncidentDynamicFilter</sys_name>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sp_widget_904278c107e020102e76fea89c1ed0fb</sys_update_name>
+        <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+        <sys_updated_on>2020-11-16 12:27:57</sys_updated_on>
+        <template><![CDATA[<div>
+  <!-- your widget template -->
+  <input id="allTasks" type="button" value="All tasks" onclick="clearFilter();" />
+  <input id="onlyMine" type="button" value="Only mine" onclick="publishFilter();" />
+</div>]]></template>
+    </sp_widget>
+</record_update>

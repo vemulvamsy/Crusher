@@ -6,7 +6,7 @@
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
-        <active>true</active>
+        <active>false</active>
         <add_message>false</add_message>
         <advanced>true</advanced>
         <change_fields>false</change_fields>
@@ -30,12 +30,21 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
 	// Add your code here
-	var total_sales = parseFloat(current.total_sales_amount);
-	var total_payments = parseFloat(current.total_payments);
-	var tota_sales_without_batha = parseFloat(current.total_sales_without_batha);
+// 	var total_sales = parseFloat(current.total_sales_amount);
+// 	var total_payments = parseFloat(current.total_payments);
+// 	var tota_sales_without_batha = parseFloat(current.total_sales_without_batha);
 	
-	current.due_amount = total_sales - total_payments;
-	current.total_due_without_batha = tota_sales_without_batha - total_payments;
+// 	current.due_amount = total_sales - total_payments;
+// 	current.total_due_without_batha = tota_sales_without_batha - total_payments;
+	
+	var total_sales_without_batha = parseFloat(current.total_sales_without_batha);
+	var total_payments = parseFloat(current.total_payments);
+	var total_sales_with_gst = parseFloat(current.total_sales_with_gst);
+	
+	
+	current.total_due_without_batha = total_sales_without_batha
+	current.total_due_with_gst_and_without_batha = 
+	
 	current.setWorkflow(false);
 	current.update();
 
@@ -46,7 +55,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>974e467d4f34c410a0a27bb28110c7cd</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>update cust due amt</sys_name>
         <sys_overrides/>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
@@ -54,7 +63,7 @@
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sys_script_974e467d4f34c410a0a27bb28110c7cd</sys_update_name>
         <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
-        <sys_updated_on>2020-04-20 14:53:52</sys_updated_on>
+        <sys_updated_on>2020-09-27 11:07:20</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

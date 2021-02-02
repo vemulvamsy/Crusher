@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_67546_crusher.sales create role" name="x_67546_crusher.sales create role">21c5a90607cae0582e76fea89c1ed0f0</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>vemul.vamsy@gmail.com</sys_created_by>
+        <sys_created_on>2021-02-02 01:59:14</sys_created_on>
+        <sys_id>c3d52d8207cae0582e76fea89c1ed0c5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>21c5a90607cae0582e76fea89c1ed0f0</sys_name>
+        <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
+        <sys_update_name>sys_embedded_help_role_c3d52d8207cae0582e76fea89c1ed0c5</sys_update_name>
+        <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+        <sys_updated_on>2021-02-02 01:59:14</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

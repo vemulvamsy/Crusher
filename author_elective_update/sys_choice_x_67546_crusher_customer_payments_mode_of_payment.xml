@@ -190,6 +190,25 @@
             <sys_updated_on>2020-07-08 07:00:13</sys_updated_on>
             <value>Other Adjustments</value>
         </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>mode_of_payment</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Google Pay 989</label>
+            <language>en</language>
+            <name>x_67546_crusher_customer_payments</name>
+            <sequence>10</sequence>
+            <sys_created_by>vemul.vamsy@gmail.com</sys_created_by>
+            <sys_created_on>2020-10-19 08:23:54</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5a4505c4070864542e76fea89c1ed032</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>vemul.vamsy@gmail.com</sys_updated_by>
+            <sys_updated_on>2020-10-19 08:24:01</sys_updated_on>
+            <value>Google Pay 989</value>
+        </sys_choice>
         <sys_choice_set action="INSERT_OR_UPDATE">
             <element>mode_of_payment</element>
             <name>x_67546_crusher_customer_payments</name>
