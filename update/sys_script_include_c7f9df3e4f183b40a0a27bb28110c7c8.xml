@@ -177,7 +177,9 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		gs.info("vamshi sales from date: "+fromDate+" todate: "+toDate);
 		var objSales = {};
 		var gr = new GlideAggregate('x_67546_crusher_sales');
-		gr.addEncodedQuery("dateBETWEENjavascript:gs.dateGenerate('"+fromDate+"','start')@javascript:gs.dateGenerate('"+toDate+"','end')");
+		if(fromDate != "" && toDate != ""){
+			gr.addEncodedQuery("dateBETWEENjavascript:gs.dateGenerate('"+fromDate+"','start')@javascript:gs.dateGenerate('"+toDate+"','end')");
+		}
 		gr.groupBy('customer_name');
 		gr.addAggregate('SUM','total_without_batha');
 		gr.query();
@@ -192,7 +194,9 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		gs.info("vamshi payments from date: "+fromDate+" todate: "+toDate);
 		var objPayments = {};
 		var grp = new GlideAggregate('x_67546_crusher_customer_payments');
-		grp.addEncodedQuery("dateBETWEENjavascript:gs.dateGenerate('"+fromDate+"','start')@javascript:gs.dateGenerate('"+toDate+"','end')");
+		if(fromDate != "" && toDate != ""){
+			grp.addEncodedQuery("dateBETWEENjavascript:gs.dateGenerate('"+fromDate+"','start')@javascript:gs.dateGenerate('"+toDate+"','end')");
+		}
 		grp.groupBy('customer');
 		grp.addAggregate('SUM','amount');
 		grp.query();
@@ -239,7 +243,7 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		}
 		return "";
 	},
-	
+
 	getTravelObjectForPopup : function(){
 		var sys_ids = this.getParameter('sysparm_sys_ids');
 		var retArr = [];
@@ -260,19 +264,68 @@ CrusherUtilAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
 		//return sys_ids;
 	},
 
+	getExpenditureData : function(){
+		gs.info("Crusher Expenditure called");
+		var finalData = [];
+		var fromDate = this.getParameter('sysparm_from_date');
+		var toDate = this.getParameter('sysparm_to_date');
+		gs.info("Crusher Expenditure from date: "+fromDate+" todate: "+toDate);
+		//var expTypes = this.getExpTypes();
+		var gTotal = 0;
+		var gr = new GlideAggregate('x_67546_crusher_expenditure');
+		if(fromDate != "" && toDate != ""){
+			gr.addEncodedQuery("dateBETWEENjavascript:gs.dateGenerate('"+fromDate+"','start')@javascript:gs.dateGenerate('"+toDate+"','end')");
+		}
+		gr.groupBy('expenditure_type');
+		gr.orderBy('expenditure_type');
+		gr.addAggregate('SUM','amount');
+		gr.query();
+		var count = 1;
+		while(gr.next()){
+			var sum = gr.getAggregate('SUM','amount');
+			gTotal += parseFloat(sum);
+			var obj = {};
+			obj.sno = count++;
+			obj.type = gr.expenditure_type.getDisplayValue();
+			obj.total = String(sum);
+			finalData.push(obj);
+			//objSales[String(gr.customer_name)] = sum;
+		}
+		var objF = {};
+		objF.sno = "";
+		objF.type = "Grand Total";
+		objF.total = String(gTotal);
+		finalData.push(objF);
+		gs.info("Crusher Expenditure Data: "+JSON.stringify(finalData));
+		return JSON.stringify(finalData);
+	},
+
+	getExpTypes : function(){
+		var types = [];
+		var exptGr = new GlideRecord('x_67546_crusher_expenditure_type');
+		exptGr.query();
+		while(exptGr.next()){
+			types.push(String(exptGr.name));
+
+		}
+		return types;
+	},
+
+
+
 	type: 'CrusherUtilAjax'
 });]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2019-03-24 05:58:51</sys_created_on>
         <sys_id>c7f9df3e4f183b40a0a27bb28110c7c8</sys_id>
-        <sys_mod_count>42</sys_mod_count>
+        <sys_mod_count>52</sys_mod_count>
         <sys_name>CrusherUtilAjax</sys_name>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
         <sys_update_name>sys_script_include_c7f9df3e4f183b40a0a27bb28110c7c8</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-07-11 15:15:31</sys_updated_on>
+        <sys_updated_on>2021-03-07 15:08:27</sys_updated_on>
     </sys_script_include>
 </record_update>

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
     <sys_ui_page action="INSERT_OR_UPDATE">
         <category>general</category>
-        <client_script><![CDATA[getCustomerData();
+        <client_script><![CDATA[getExpenditureData();
 function setMinDate(){
 	var fd = gel("from_date").value; 
 	gel("to_date").setAttribute("min", fd);
 	//gel("to_date").setAttribute("readonly", true);
 }
-
-function getCustomerData() {
+function getExpenditureData() {
 	gel("loading").style.display = "block";
 	//Type appropriate comment here, and begin script below
 	//var respObj = addSelection();
@@ -37,7 +36,7 @@ function getCustomerData() {
 
 
 	var ga = new GlideAjax('CrusherUtilAjax');
-	ga.addParam('sysparm_name','getAllCustomersData');
+	ga.addParam('sysparm_name','getExpenditureData');
 	ga.addParam('sysparm_from_date',from_date);
 	ga.addParam('sysparm_to_date',to_date);
 	ga.getXML(getResponseObj);
@@ -47,56 +46,45 @@ function getCustomerData() {
 function getResponseObj(response){
 	var resp = response.responseXML.documentElement.getAttribute("answer");
 	console.log(resp);
-	gel("loading").style.display = "none";
 	var custTable = gel("data");
-	var totSales = 0;
-	var totPaymetns = 0;
-	var totDues = 0;
-	custTable.innerHTML = "";
+
+	
+	gel("loading").style.display = "none";
 	if(resp != ""){
 		var respObj = JSON.parse(resp);
-		var sno = 1;
+
 		for(var i=0; i < respObj.length; i++){
-			var row = custTable.insertRow();
-			var cell0 = row.insertCell();
-			cell0.textContent = sno++;
-			var cell1 = row.insertCell();
-			cell1.textContent = respObj[i].custName;
-			var cell2 = row.insertCell();
-			cell2.textContent = respObj[i].sales;
-			var cell3 = row.insertCell();
-			cell3.textContent = respObj[i].payments;
-			var cell4 = row.insertCell();
-			cell4.textContent = respObj[i].due;
-			
-			totSales += parseFloat(respObj[i].sales);
-			totPaymetns += parseFloat(respObj[i].payments);
-			totDues += parseFloat(respObj[i].due);
+			if(i != respObj.length - 1){
+				var row = custTable.insertRow();
+				var cell0 = row.insertCell();
+				cell0.innerHTML = respObj[i].sno;
+				var cell1 = row.insertCell();
+				cell1.innerHTML = respObj[i].type;
+				var cell2 = row.insertCell();
+				cell2.innerHTML = respObj[i].total;
+			}
+			if(i == respObj.length - 1){
+				var row1 = custTable.insertRow();
+				var cell01 = row1.insertCell();
+				cell01.innerHTML = respObj[i].sno;
+				var cell11 = row1.insertCell();
+				cell11.innerHTML = "<h4>"+respObj[i].type+"</h4>";
+				var cell21 = row1.insertCell();
+				cell21.innerHTML = "<h4>"+respObj[i].total+"</h4>";
+			}
 		}
-		var row1 = custTable.insertRow();
-			var cell01 = row1.insertCell();
-			cell01.textContent = '';
-			var cell11 = row1.insertCell();
-			cell11.innerHTML = "<h4>Grand Total</h4>";
-			var cell21 = row1.insertCell();
-			cell21.innerHTML = "<h4>"+totSales+"</h4>";
-			var cell31 = row1.insertCell();
-			cell31.innerHTML = "<h4>"+totPaymetns+"</h4>";
-			var cell41 = row1.insertCell();
-			cell41.innerHTML = "<h4>"+totDues+"</h4>";
-		
 	}
-	
 	gel("to_date").setAttribute("min", "");
 	gel("to_date").setAttribute("min", "");
 	//gel("to_date").setAttribute("readonly", false);
 	gel("from_date").value = "";
 	gel("to_date").value = "";
+
 }
 ]]></client_script>
         <description/>
         <direct>false</direct>
-        <endpoint>x_67546_crusher_all_customers_sales_payments.do</endpoint>
+        <endpoint>x_67546_crusher_expenditure_report.do</endpoint>
         <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
 <j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
 	<style> 
@@ -124,12 +112,12 @@ function getResponseObj(response){
 
 		<div class="row">
 			<div class="col-sm-4"></div>
-			<div class="col-sm-4"><h2 class="text-center text-underline"><u>All Customers Sales Vs Payments Report</u></h2></div>
+			<div class="col-sm-4"><h2 class="text-center text-underline"><u>Expenditure Report</u></h2></div>
 			<div class="col-sm-4"></div>
 		</div>
 		<div class="row">
-			<div class="col-sm-2"></div>
-			<div class="col-sm-8 noprint">
+			<div class="col-sm-3"></div>
+			<div class="col-sm-6 noprint">
 				<form>
 					<div class="form-group row" id="date_pick">
 						<div class="col-sm-12">
@@ -141,30 +129,28 @@ function getResponseObj(response){
 					<div class="form-group row">
 						<div class="col-sm-12">
 							<center>
-								<input type="button" class="btn btn-default" value="Get Details"  onclick="getCustomerData()"/>
-								<input type="button" class="btn btn-default" value="Show Full Data"  onclick="getCustomerData()"/>
+								<input type="button" class="btn btn-default" value="Get Details"  onclick="getExpenditureData()"/>
+								<input type="button" class="btn btn-default" value="Show Full Data"  onclick="getExpenditureData()"/>
 							</center>
 						</div>
 
 					</div>
 				</form>
 			</div>
-			<div class="col-sm-2"></div>
+			<div class="col-sm-3"></div>
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
 				<h3 id="loading">Loading...</h3>
 			</div>
 			<div class="col-sm-12">
-				<h3><u>Customer Details <span id="dt_range"></span></u></h3>
+				<h3><u>Expenditure Details <span id="dt_range"></span></u></h3>
 				<table class="table" id="details">
 					<thead>
 						<tr class="info">
 							<th scope="col">S. No.</th>
-							<th scope="col">Customer Name</th>
+							<th scope="col">Expenditure Type</th>
 							<th scope="col">Total Sales Amount</th>
-							<th scope="col">Total Payments Amount</th>
-							<th scope="col">Total Due Amount</th>
 						</tr>
 					</thead>
 					<tbody id="data">
@@ -177,19 +163,19 @@ function getResponseObj(response){
 
 
 </j:jelly>]]></html>
-        <name>all_customers_sales_payments</name>
+        <name>expenditure_report</name>
         <processing_script/>
         <sys_class_name>sys_ui_page</sys_class_name>
-        <sys_created_by>vemul.vamsy@gmail.com</sys_created_by>
-        <sys_created_on>2020-05-01 12:20:31</sys_created_on>
-        <sys_id>d3a399c5072418102e76fea89c1ed0df</sys_id>
-        <sys_mod_count>15</sys_mod_count>
-        <sys_name>all_customers_sales_payments</sys_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-03-07 12:59:16</sys_created_on>
+        <sys_id>85e8fd30ff726050e0d287f8b721f147</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>expenditure_report</sys_name>
         <sys_package display_value="Crusher" source="x_67546_crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_package>
         <sys_policy/>
         <sys_scope display_value="Crusher">7ed3c03e4f5cf740a0a27bb28110c7a5</sys_scope>
-        <sys_update_name>sys_ui_page_d3a399c5072418102e76fea89c1ed0df</sys_update_name>
+        <sys_update_name>sys_ui_page_85e8fd30ff726050e0d287f8b721f147</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-03-07 15:10:58</sys_updated_on>
+        <sys_updated_on>2021-03-07 14:55:37</sys_updated_on>
     </sys_ui_page>
 </record_update>
